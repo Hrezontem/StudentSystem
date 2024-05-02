@@ -30,8 +30,7 @@ namespace StudentSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVStudentList = new System.Windows.Forms.DataGridView();
             this.BTNInsertST = new System.Windows.Forms.Button();
             this.BTNSTInfo = new System.Windows.Forms.Button();
@@ -47,10 +46,10 @@ namespace StudentSystem
             this.светлаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CBGroup = new MetroFramework.Controls.MetroComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.настройкиПодключенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обАвторахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CBGroup = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudentList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -66,28 +65,21 @@ namespace StudentSystem
             this.DGVStudentList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGVStudentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVStudentList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVStudentList.DefaultCellStyle = dataGridViewCellStyle8;
             this.DGVStudentList.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.DGVStudentList.Location = new System.Drawing.Point(269, 166);
             this.DGVStudentList.MultiSelect = false;
             this.DGVStudentList.Name = "DGVStudentList";
             this.DGVStudentList.ReadOnly = true;
+            this.DGVStudentList.RowHeadersWidth = 51;
             this.DGVStudentList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGVStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVStudentList.Size = new System.Drawing.Size(698, 446);
@@ -134,7 +126,7 @@ namespace StudentSystem
             // SearchST
             // 
             this.SearchST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchST.Location = new System.Drawing.Point(0, 20);
+            this.SearchST.Location = new System.Drawing.Point(0, 25);
             this.SearchST.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.SearchST.Multiline = true;
             this.SearchST.Name = "SearchST";
@@ -151,31 +143,32 @@ namespace StudentSystem
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(152, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Поиск по ФИО";
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.перенестиВОтчисленныеToolStripMenuItem,
             this.удалитьСтудентаToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(209, 52);
             // 
             // перенестиВОтчисленныеToolStripMenuItem
             // 
             this.перенестиВОтчисленныеToolStripMenuItem.Name = "перенестиВОтчисленныеToolStripMenuItem";
-            this.перенестиВОтчисленныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.перенестиВОтчисленныеToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
             this.перенестиВОтчисленныеToolStripMenuItem.Text = "В \"Отчисленные\"";
             this.перенестиВОтчисленныеToolStripMenuItem.Click += new System.EventHandler(this.перенестиВОтчисленныеToolStripMenuItem_Click);
             // 
             // удалитьСтудентаToolStripMenuItem
             // 
             this.удалитьСтудентаToolStripMenuItem.Name = "удалитьСтудентаToolStripMenuItem";
-            this.удалитьСтудентаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьСтудентаToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
             this.удалитьСтудентаToolStripMenuItem.Text = "Удалить студента";
             this.удалитьСтудентаToolStripMenuItem.Click += new System.EventHandler(this.удалитьСтудентаToolStripMenuItem_Click);
             // 
@@ -204,7 +197,7 @@ namespace StudentSystem
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(101, 25);
             this.label2.TabIndex = 12;
             this.label2.Text = "Поиск по";
             // 
@@ -241,18 +234,33 @@ namespace StudentSystem
             this.flowLayoutPanel2.Size = new System.Drawing.Size(149, 55);
             this.flowLayoutPanel2.TabIndex = 14;
             // 
+            // CBGroup
+            // 
+            this.CBGroup.FormattingEnabled = true;
+            this.CBGroup.ItemHeight = 24;
+            this.CBGroup.Items.AddRange(new object[] {
+            "Группам",
+            "ФИО"});
+            this.CBGroup.Location = new System.Drawing.Point(0, 28);
+            this.CBGroup.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.CBGroup.Name = "CBGroup";
+            this.CBGroup.Size = new System.Drawing.Size(121, 30);
+            this.CBGroup.TabIndex = 16;
+            this.CBGroup.SelectedIndexChanged += new System.EventHandler(this.CBGroup_SelectedIndexChanged);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиПодключенияToolStripMenuItem,
             this.обАвторахToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(19, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(286, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(367, 31);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -260,7 +268,7 @@ namespace StudentSystem
             // 
             this.настройкиПодключенияToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.настройкиПодключенияToolStripMenuItem.Name = "настройкиПодключенияToolStripMenuItem";
-            this.настройкиПодключенияToolStripMenuItem.Size = new System.Drawing.Size(183, 23);
+            this.настройкиПодключенияToolStripMenuItem.Size = new System.Drawing.Size(238, 27);
             this.настройкиПодключенияToolStripMenuItem.Text = "Настройки подключения";
             this.настройкиПодключенияToolStripMenuItem.Click += new System.EventHandler(this.настройкиПодключенияToolStripMenuItem_Click);
             // 
@@ -268,26 +276,12 @@ namespace StudentSystem
             // 
             this.обАвторахToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.обАвторахToolStripMenuItem.Name = "обАвторахToolStripMenuItem";
-            this.обАвторахToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
+            this.обАвторахToolStripMenuItem.Size = new System.Drawing.Size(121, 27);
             this.обАвторахToolStripMenuItem.Text = "Об авторах";
-            // 
-            // CBGroup
-            // 
-            this.CBGroup.FormattingEnabled = true;
-            this.CBGroup.ItemHeight = 23;
-            this.CBGroup.Items.AddRange(new object[] {
-            "Группам",
-            "ФИО"});
-            this.CBGroup.Location = new System.Drawing.Point(0, 23);
-            this.CBGroup.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.CBGroup.Name = "CBGroup";
-            this.CBGroup.Size = new System.Drawing.Size(121, 29);
-            this.CBGroup.TabIndex = 16;
-            this.CBGroup.SelectedIndexChanged += new System.EventHandler(this.CBGroup_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 655);
             this.Controls.Add(this.menuStrip1);

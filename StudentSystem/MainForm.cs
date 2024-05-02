@@ -193,7 +193,7 @@ namespace StudentSystem
                         cmd = new NpgsqlCommand(sql, sqlConnection);
                         cmd.ExecuteNonQuery();
                         sqlConnection.Close();
-                        MessageBox.Show("Удалено успешно");
+                        MessageBox.Show("Удалено sas");
                         Select();
 
 
