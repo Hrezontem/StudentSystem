@@ -101,7 +101,7 @@ namespace StudentSystem
         private void отменитьИзмененияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var drez1 = MessageBox.Show(
-                "Вы уверены???",
+                "Я ЭТО ИЗМЕНИЛ???",
                 "ВНИМАНИЕ!!!",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning,
