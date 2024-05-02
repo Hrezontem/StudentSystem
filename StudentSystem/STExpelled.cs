@@ -152,7 +152,7 @@ namespace StudentSystem
         private void удалитьСтудентаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var drez = MessageBox.Show(
-               "Вы уверены???",
+               "Вы PENIS???",
                "ВНИМАНИЕ!!!",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Warning,
