@@ -67,7 +67,6 @@ namespace StudentSystem
                 DGVStudentList.Columns["group_full_name"].HeaderText = "Группа";
                 DGVStudentList.Columns["group_name"].Visible = false;
                 DGVStudentList.Columns["group_name_id"].Visible = false;
-                DGVStudentList.Columns["group_course"].Visible = false;
                 DGVStudentList.Columns["group_num"].Visible = false;
                 DGVStudentList.Columns["student_card"].HeaderText = "Студенческий";
                 DGVStudentList.Columns["group_years"].HeaderText = "Годы обучения";
