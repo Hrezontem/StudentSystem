@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DGVSpecNameGR = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.SearchSpec = new System.Windows.Forms.TextBox();
+            this.SearchGroup = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.GroupNumTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.DGVSpecNameGR.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVSpecNameGR.RowHeadersVisible = false;
             this.DGVSpecNameGR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVSpecNameGR.Size = new System.Drawing.Size(221, 132);
+            this.DGVSpecNameGR.Size = new System.Drawing.Size(221, 103);
             this.DGVSpecNameGR.TabIndex = 63;
             this.DGVSpecNameGR.TabStop = false;
             this.DGVSpecNameGR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSpecNameGR_CellClick);
@@ -137,16 +137,15 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Поиск по специальности";
             // 
-            // SearchSpec
+            // SearchGroup
             // 
-            this.SearchSpec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SearchGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchSpec.Location = new System.Drawing.Point(22, 95);
-            this.SearchSpec.Name = "SearchSpec";
-            this.SearchSpec.Size = new System.Drawing.Size(222, 20);
-            this.SearchSpec.TabIndex = 65;
-            this.SearchSpec.TextChanged += new System.EventHandler(this.SearchGroup_TextChanged);
+            this.SearchGroup.Location = new System.Drawing.Point(22, 95);
+            this.SearchGroup.Name = "SearchGroup";
+            this.SearchGroup.Size = new System.Drawing.Size(222, 20);
+            this.SearchGroup.TabIndex = 65;
             // 
             // label3
             // 
@@ -155,7 +154,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label3.Location = new System.Drawing.Point(20, 533);
+            this.label3.Location = new System.Drawing.Point(18, 488);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 19);
@@ -167,7 +166,7 @@
             this.GroupNumTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupNumTB.Location = new System.Drawing.Point(23, 555);
+            this.GroupNumTB.Location = new System.Drawing.Point(21, 510);
             this.GroupNumTB.Name = "GroupNumTB";
             this.GroupNumTB.Size = new System.Drawing.Size(222, 20);
             this.GroupNumTB.TabIndex = 67;
@@ -179,7 +178,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label4.Location = new System.Drawing.Point(22, 591);
+            this.label4.Location = new System.Drawing.Point(20, 546);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 19);
@@ -190,7 +189,7 @@
             // 
             this.DateStudyMTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DateStudyMTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateStudyMTB.Location = new System.Drawing.Point(134, 593);
+            this.DateStudyMTB.Location = new System.Drawing.Point(132, 548);
             this.DateStudyMTB.Mask = "(0000-0000)";
             this.DateStudyMTB.Name = "DateStudyMTB";
             this.DateStudyMTB.Size = new System.Drawing.Size(71, 15);
@@ -203,7 +202,7 @@
             this.NewSpecINSBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewSpecINSBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewSpecINSBTN.ForeColor = System.Drawing.Color.White;
-            this.NewSpecINSBTN.Location = new System.Drawing.Point(35, 634);
+            this.NewSpecINSBTN.Location = new System.Drawing.Point(38, 589);
             this.NewSpecINSBTN.Name = "NewSpecINSBTN";
             this.NewSpecINSBTN.Size = new System.Drawing.Size(195, 30);
             this.NewSpecINSBTN.TabIndex = 73;
@@ -218,7 +217,7 @@
             this.BTNBacMain1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNBacMain1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BTNBacMain1.ForeColor = System.Drawing.Color.White;
-            this.BTNBacMain1.Location = new System.Drawing.Point(35, 670);
+            this.BTNBacMain1.Location = new System.Drawing.Point(38, 625);
             this.BTNBacMain1.Name = "BTNBacMain1";
             this.BTNBacMain1.Size = new System.Drawing.Size(195, 30);
             this.BTNBacMain1.TabIndex = 72;
@@ -230,7 +229,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(23, 321);
+            this.label5.Location = new System.Drawing.Point(22, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(218, 17);
             this.label5.TabIndex = 74;
@@ -239,9 +238,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.fullspecnameLB);
-            this.groupBox1.Location = new System.Drawing.Point(23, 341);
+            this.groupBox1.Location = new System.Drawing.Point(21, 314);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 112);
+            this.groupBox1.Size = new System.Drawing.Size(222, 84);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             // 
@@ -264,7 +263,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(21, 456);
+            this.label6.Location = new System.Drawing.Point(19, 411);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(206, 17);
             this.label6.TabIndex = 76;
@@ -273,7 +272,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.CodSpecLB);
-            this.groupBox2.Location = new System.Drawing.Point(24, 476);
+            this.groupBox2.Location = new System.Drawing.Point(22, 431);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.groupBox2.Size = new System.Drawing.Size(206, 40);
@@ -296,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 723);
+            this.ClientSize = new System.Drawing.Size(267, 672);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
@@ -308,7 +307,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GroupNumTB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SearchSpec);
+            this.Controls.Add(this.SearchGroup);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.DGVSpecNameGR);
             this.Name = "NewGroupCreate";
@@ -333,7 +332,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView DGVSpecNameGR;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SearchSpec;
+        private System.Windows.Forms.TextBox SearchGroup;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox GroupNumTB;
         private System.Windows.Forms.Label label4;
