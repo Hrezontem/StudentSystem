@@ -86,7 +86,6 @@ namespace StudentSystem
                     DGVGroups.DataSource = null;
                     DGVGroups.DataSource = dt;
                     DGVGroups.Columns["group_id"].Visible = false;
-                    DGVGroups.Columns["group_course"].Visible = false;
                     DGVGroups.Columns["group_full_name"].HeaderText = "Группы";
                     DGVGroups.Columns["group_spec_name"].Visible = false;
                     DGVGroups.Columns["group_code"].Visible = false;
