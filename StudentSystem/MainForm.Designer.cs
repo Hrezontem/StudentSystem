@@ -30,11 +30,11 @@ namespace StudentSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVStudentList = new System.Windows.Forms.DataGridView();
             this.BTNInsertST = new System.Windows.Forms.Button();
             this.BTNSTInfo = new System.Windows.Forms.Button();
@@ -53,6 +53,9 @@ namespace StudentSystem
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.настройкиПодключенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обАвторахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьСпециальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TCST = new MetroFramework.Controls.MetroTabControl();
             this.TPAllST = new MetroFramework.Controls.MetroTabPage();
             this.TPEXST = new MetroFramework.Controls.MetroTabPage();
@@ -60,9 +63,6 @@ namespace StudentSystem
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьСтудентаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.jToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьСпециальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudentList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -83,23 +83,23 @@ namespace StudentSystem
             this.DGVStudentList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGVStudentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVStudentList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVStudentList.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVStudentList.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVStudentList.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.DGVStudentList.Location = new System.Drawing.Point(0, 3);
             this.DGVStudentList.MultiSelect = false;
@@ -267,7 +267,7 @@ namespace StudentSystem
             this.menuStrip1.Location = new System.Drawing.Point(19, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(355, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(475, 27);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -285,6 +285,35 @@ namespace StudentSystem
             this.обАвторахToolStripMenuItem.Name = "обАвторахToolStripMenuItem";
             this.обАвторахToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
             this.обАвторахToolStripMenuItem.Text = "Об авторах";
+            this.обАвторахToolStripMenuItem.Click += new System.EventHandler(this.обАвторахToolStripMenuItem_Click);
+            // 
+            // jToolStripMenuItem
+            // 
+            this.jToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьГруппуToolStripMenuItem,
+            this.добавитьСпециальностьToolStripMenuItem});
+            this.jToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.jToolStripMenuItem.Name = "jToolStripMenuItem";
+            this.jToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
+            this.jToolStripMenuItem.Text = "Группы";
+            // 
+            // добавитьГруппуToolStripMenuItem
+            // 
+            this.добавитьГруппуToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.добавитьГруппуToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.добавитьГруппуToolStripMenuItem.Name = "добавитьГруппуToolStripMenuItem";
+            this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.добавитьГруппуToolStripMenuItem.Text = "Добавить Группу";
+            this.добавитьГруппуToolStripMenuItem.Click += new System.EventHandler(this.добавитьГруппуToolStripMenuItem_Click);
+            // 
+            // добавитьСпециальностьToolStripMenuItem
+            // 
+            this.добавитьСпециальностьToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.добавитьСпециальностьToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.добавитьСпециальностьToolStripMenuItem.Name = "добавитьСпециальностьToolStripMenuItem";
+            this.добавитьСпециальностьToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.добавитьСпециальностьToolStripMenuItem.Text = "Добавить Специальность";
+            this.добавитьСпециальностьToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпециальностьToolStripMenuItem_Click);
             // 
             // TCST
             // 
@@ -327,36 +356,36 @@ namespace StudentSystem
             this.DGVExpelledtList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGVExpelledtList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVExpelledtList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVExpelledtList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVExpelledtList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVExpelledtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVExpelledtList.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVExpelledtList.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGVExpelledtList.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.DGVExpelledtList.Location = new System.Drawing.Point(0, 3);
             this.DGVExpelledtList.MultiSelect = false;
             this.DGVExpelledtList.Name = "DGVExpelledtList";
             this.DGVExpelledtList.ReadOnly = true;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVExpelledtList.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVExpelledtList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVExpelledtList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGVExpelledtList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVExpelledtList.Size = new System.Drawing.Size(687, 405);
@@ -387,34 +416,6 @@ namespace StudentSystem
             this.удалитьСтудентаToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.удалитьСтудентаToolStripMenuItem1.Text = "Удалить студента";
             this.удалитьСтудентаToolStripMenuItem1.Click += new System.EventHandler(this.удалитьСтудентаToolStripMenuItem1_Click);
-            // 
-            // jToolStripMenuItem
-            // 
-            this.jToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьГруппуToolStripMenuItem,
-            this.добавитьСпециальностьToolStripMenuItem});
-            this.jToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.jToolStripMenuItem.Name = "jToolStripMenuItem";
-            this.jToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
-            this.jToolStripMenuItem.Text = "Группы";
-            // 
-            // добавитьГруппуToolStripMenuItem
-            // 
-            this.добавитьГруппуToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.добавитьГруппуToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
-            this.добавитьГруппуToolStripMenuItem.Name = "добавитьГруппуToolStripMenuItem";
-            this.добавитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
-            this.добавитьГруппуToolStripMenuItem.Text = "Добавить Группу";
-            this.добавитьГруппуToolStripMenuItem.Click += new System.EventHandler(this.добавитьГруппуToolStripMenuItem_Click);
-            // 
-            // добавитьСпециальностьToolStripMenuItem
-            // 
-            this.добавитьСпециальностьToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.добавитьСпециальностьToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
-            this.добавитьСпециальностьToolStripMenuItem.Name = "добавитьСпециальностьToolStripMenuItem";
-            this.добавитьСпециальностьToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
-            this.добавитьСпециальностьToolStripMenuItem.Text = "Добавить Специальность";
-            this.добавитьСпециальностьToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпециальностьToolStripMenuItem_Click);
             // 
             // MainForm
             // 

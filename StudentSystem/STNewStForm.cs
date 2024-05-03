@@ -160,5 +160,13 @@ namespace StudentSystem
         {
 
         }
+
+        private void STNewStForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MainForm mainForm = new MainForm();
+            this.Hide();
+            mainForm.Show();
+        }
     }
 }

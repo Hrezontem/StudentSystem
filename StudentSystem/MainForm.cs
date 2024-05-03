@@ -98,7 +98,6 @@ namespace StudentSystem
                 DGVExpelledtList.Columns["group_full_name"].HeaderText = "Группа";
                 DGVExpelledtList.Columns["group_name"].Visible = false;
                 DGVExpelledtList.Columns["group_name_id"].Visible = false;
-                DGVExpelledtList.Columns["group_course"].Visible = false;
                 DGVExpelledtList.Columns["group_num"].Visible = false;
                 DGVExpelledtList.Columns["student_card"].HeaderText = "Студенческий";
                 DGVExpelledtList.Columns["group_years"].HeaderText = "Годы обучения";
@@ -387,6 +386,13 @@ namespace StudentSystem
             NewSpec NSC = new NewSpec();
             this.Hide();
             NSC.Show();
+        }
+
+        private void обАвторахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutAuthor aboutAuthor = new AboutAuthor();
+            this.Hide();
+            aboutAuthor.Show();
         }
     }
 

@@ -124,5 +124,13 @@ namespace StudentSystem
                 group_name_id_text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name_id"].Value.ToString();
             }
         }
+
+        private void NewGroupCreate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MainForm mainForm = new MainForm();
+            this.Hide();
+            mainForm.Show();
+        }
     }
 }

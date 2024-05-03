@@ -81,5 +81,13 @@ namespace StudentSystem
             this.Hide();
             MF.Show();
         }
+
+        private void NewSpec_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MainForm mainForm = new MainForm();
+            this.Hide();
+            mainForm.Show();
+        }
     }
 }
