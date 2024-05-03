@@ -111,6 +111,18 @@
     <Compile Include="ConnDBForm.Designer.cs">
       <DependentUpon>ConnDBForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewGroupCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGroupCreate.Designer.cs">
+      <DependentUpon>NewGroupCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSpec.Designer.cs">
+      <DependentUpon>NewSpec.cs</DependentUpon>
+    </Compile>
     <Compile Include="STDescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConnDBForm.resx">
       <DependentUpon>ConnDBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGroupCreate.resx">
+      <DependentUpon>NewGroupCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSpec.resx">
+      <DependentUpon>NewSpec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="STDescription.resx">
       <DependentUpon>STDescription.cs</DependentUpon>
