@@ -111,8 +111,6 @@ namespace StudentSystem
         private void перенестиВОтчисленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var drez1 = MessageBox.Show(
-                "Вы уверены???",
-                "ВНИМАНИЕ!!!",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning,
                 MessageBoxDefaultButton.Button1
