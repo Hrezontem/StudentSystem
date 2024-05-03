@@ -124,5 +124,12 @@ namespace StudentSystem
                 group_name_id_text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name_id"].Value.ToString();
             }
         }
+
+        private void SearchGroup_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = $"group_name LIKE '" + SearchSpec.Text + "%'";
+            DGVSpecNameGR.DataSource = dv;
+        }
     }
 }
