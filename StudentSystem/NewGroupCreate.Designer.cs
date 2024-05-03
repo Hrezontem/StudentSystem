@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Group = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,17 +36,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchGroup = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GroupNumTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.DateStudyMTB = new System.Windows.Forms.MaskedTextBox();
             this.NewSpecINSBTN = new System.Windows.Forms.Button();
             this.BTNBacMain1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.fullspecnameLB = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CodSpecLB = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -63,12 +67,12 @@
             // 
             this.Group.AutoSize = true;
             this.Group.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.Group.Location = new System.Drawing.Point(84, 19);
+            this.Group.Location = new System.Drawing.Point(118, 19);
             this.Group.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.Group.Name = "Group";
-            this.Group.Size = new System.Drawing.Size(54, 19);
+            this.Group.Size = new System.Drawing.Size(18, 19);
             this.Group.TabIndex = 57;
-            this.Group.Text = "Группа";
+            this.Group.Text = "...";
             // 
             // label2
             // 
@@ -80,9 +84,9 @@
             this.label2.Location = new System.Drawing.Point(4, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 10, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
+            this.label2.Size = new System.Drawing.Size(108, 19);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Группа";
+            this.label2.Text = "Специальность";
             // 
             // DGVSpecNameGR
             // 
@@ -98,14 +102,14 @@
             this.DGVSpecNameGR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVSpecNameGR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSpecNameGR.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSpecNameGR.GridColor = System.Drawing.Color.White;
             this.DGVSpecNameGR.Location = new System.Drawing.Point(23, 176);
             this.DGVSpecNameGR.MultiSelect = false;
@@ -114,9 +118,10 @@
             this.DGVSpecNameGR.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVSpecNameGR.RowHeadersVisible = false;
             this.DGVSpecNameGR.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVSpecNameGR.Size = new System.Drawing.Size(221, 97);
+            this.DGVSpecNameGR.Size = new System.Drawing.Size(221, 103);
             this.DGVSpecNameGR.TabIndex = 63;
             this.DGVSpecNameGR.TabStop = false;
+            this.DGVSpecNameGR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSpecNameGR_CellClick);
             // 
             // label1
             // 
@@ -149,22 +154,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label3.Location = new System.Drawing.Point(19, 399);
+            this.label3.Location = new System.Drawing.Point(18, 488);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 19);
             this.label3.TabIndex = 68;
             this.label3.Text = "Номер группы";
             // 
-            // textBox1
+            // GroupNumTB
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GroupNumTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(22, 421);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 67;
+            this.GroupNumTB.Location = new System.Drawing.Point(21, 510);
+            this.GroupNumTB.Name = "GroupNumTB";
+            this.GroupNumTB.Size = new System.Drawing.Size(222, 20);
+            this.GroupNumTB.TabIndex = 67;
             // 
             // label4
             // 
@@ -173,22 +178,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label4.Location = new System.Drawing.Point(21, 457);
+            this.label4.Location = new System.Drawing.Point(20, 546);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 19);
             this.label4.TabIndex = 70;
             this.label4.Text = "Даты обучения";
             // 
-            // maskedTextBox1
+            // DateStudyMTB
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(133, 465);
-            this.maskedTextBox1.Mask = "(0000-0000)";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(71, 15);
-            this.maskedTextBox1.TabIndex = 71;
+            this.DateStudyMTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DateStudyMTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateStudyMTB.Location = new System.Drawing.Point(132, 548);
+            this.DateStudyMTB.Mask = "(0000-0000)";
+            this.DateStudyMTB.Name = "DateStudyMTB";
+            this.DateStudyMTB.Size = new System.Drawing.Size(71, 15);
+            this.DateStudyMTB.TabIndex = 71;
             // 
             // NewSpecINSBTN
             // 
@@ -197,12 +202,13 @@
             this.NewSpecINSBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewSpecINSBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewSpecINSBTN.ForeColor = System.Drawing.Color.White;
-            this.NewSpecINSBTN.Location = new System.Drawing.Point(31, 493);
+            this.NewSpecINSBTN.Location = new System.Drawing.Point(38, 589);
             this.NewSpecINSBTN.Name = "NewSpecINSBTN";
             this.NewSpecINSBTN.Size = new System.Drawing.Size(195, 30);
             this.NewSpecINSBTN.TabIndex = 73;
             this.NewSpecINSBTN.Text = "Добавить";
             this.NewSpecINSBTN.UseVisualStyleBackColor = false;
+            this.NewSpecINSBTN.Click += new System.EventHandler(this.NewSpecINSBTN_Click);
             // 
             // BTNBacMain1
             // 
@@ -211,7 +217,7 @@
             this.BTNBacMain1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNBacMain1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BTNBacMain1.ForeColor = System.Drawing.Color.White;
-            this.BTNBacMain1.Location = new System.Drawing.Point(31, 529);
+            this.BTNBacMain1.Location = new System.Drawing.Point(38, 625);
             this.BTNBacMain1.Name = "BTNBacMain1";
             this.BTNBacMain1.Size = new System.Drawing.Size(195, 30);
             this.BTNBacMain1.TabIndex = 72;
@@ -223,7 +229,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(21, 287);
+            this.label5.Location = new System.Drawing.Point(22, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(218, 17);
             this.label5.TabIndex = 74;
@@ -232,7 +238,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.fullspecnameLB);
-            this.groupBox1.Location = new System.Drawing.Point(20, 307);
+            this.groupBox1.Location = new System.Drawing.Point(21, 314);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(222, 84);
             this.groupBox1.TabIndex = 75;
@@ -252,19 +258,54 @@
             this.fullspecnameLB.Text = "Расшифровка специальности";
             this.fullspecnameLB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(19, 411);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(206, 17);
+            this.label6.TabIndex = 76;
+            this.label6.Text = "Код специальности/профессии";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CodSpecLB);
+            this.groupBox2.Location = new System.Drawing.Point(22, 431);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.groupBox2.Size = new System.Drawing.Size(206, 40);
+            this.groupBox2.TabIndex = 77;
+            this.groupBox2.TabStop = false;
+            // 
+            // CodSpecLB
+            // 
+            this.CodSpecLB.AutoSize = true;
+            this.CodSpecLB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodSpecLB.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CodSpecLB.Location = new System.Drawing.Point(3, 13);
+            this.CodSpecLB.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.CodSpecLB.Name = "CodSpecLB";
+            this.CodSpecLB.Size = new System.Drawing.Size(33, 19);
+            this.CodSpecLB.TabIndex = 13;
+            this.CodSpecLB.Text = "Код";
+            // 
             // NewGroupCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 591);
+            this.ClientSize = new System.Drawing.Size(267, 672);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.NewSpecINSBTN);
             this.Controls.Add(this.BTNBacMain1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.DateStudyMTB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.GroupNumTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchGroup);
             this.Controls.Add(this.groupBox4);
@@ -277,6 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,13 +334,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SearchGroup;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox GroupNumTB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox DateStudyMTB;
         private System.Windows.Forms.Button NewSpecINSBTN;
         private System.Windows.Forms.Button BTNBacMain1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label fullspecnameLB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label CodSpecLB;
     }
 }

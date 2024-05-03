@@ -39,22 +39,40 @@ namespace StudentSystem
 
         private void NewSpecINSBTN_Click(object sender, EventArgs e)
         {
-            if (SpecNameTB.Text == null)
+            if (SpecNameTB.Text == "")
             {
                 MessageBox.Show("Есть не заполненные поля!!!");
             }
-            else if (CodSpecTB.Text == null)
+            else if (CodSpecTB.Text == "")
             {
                 MessageBox.Show("Есть не заполненные поля!!!");
             }
-            else if (FullSpecNameTB.Text == null)
+            else if (FullSpecNameTB.Text == "")
             {
                 MessageBox.Show("Есть не заполненные поля!!!");
             }
             else
             {
-                
-            }
+                try
+                {
+                    sqlConnection.Open();
+                    sql = $"select * from spec_insert('{SpecNameTB.Text.ToString()}', '{CodSpecTB.Text.ToString()}', '{FullSpecNameTB.Text.ToString()}')";
+                    cmd = new NpgsqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    //cmd.Parameters.AddWithValue("_students_name", STFIOTextBox.Text.ToString());
+                    //cmd.Parameters.AddWithValue("_group_id", int.Parse(group_id_text));
+                    //cmd.Parameters.AddWithValue("_students_card", STBiletTextBox.Text.ToString());
+                    MessageBox.Show("Добавлено");
+
+                    sqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    sqlConnection.Close();
+                    MessageBox.Show("ОШИБКА. Error: " + ex.Message);
+
+                }
+            } 
         }
 
         private void BTNBacMain1_Click(object sender, EventArgs e)

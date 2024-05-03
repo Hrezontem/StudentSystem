@@ -27,6 +27,7 @@ namespace StudentSystem
         private DataTable table = null;
         private string sort_textbox;
         private int rowIndex = -1;
+        private string group_name_id_text;
         public NewGroupCreate()
         {
             InitializeComponent();
@@ -34,7 +35,8 @@ namespace StudentSystem
 
         private void NewGroupCreate_Load(object sender, EventArgs e)
         {
-
+            sqlConnection = new NpgsqlConnection(connstring);
+            SelectGroup();
         }
 
         private void BTNBacMain1_Click(object sender, EventArgs e)
@@ -42,6 +44,85 @@ namespace StudentSystem
             MainForm MF = new MainForm();
             this.Hide();
             MF.Show();
+        }
+
+        private void SelectGroup()
+        {
+            try
+            {
+                sqlConnection.Open();
+                sql = @"select * from group_name";
+                cmd = new NpgsqlCommand(sql, sqlConnection);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                sqlConnection.Close();
+                DGVSpecNameGR.DataSource = null;
+                DGVSpecNameGR.DataSource = dt;
+                DGVSpecNameGR.Columns["group_name_id"].Visible = false;
+                DGVSpecNameGR.Columns["group_name"].HeaderText = "Специальность";
+                DGVSpecNameGR.Columns["group_spec_name"].Visible = false;
+                DGVSpecNameGR.Columns["group_code"].Visible = false;
+                DGVSpecNameGR.ClearSelection();
+
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        private void NewSpecINSBTN_Click(object sender, EventArgs e)
+        {
+            if (Group.Text == "...")
+            {
+                MessageBox.Show("Не заполненное поле!!! 'Специальность'");
+            }
+            else if (fullspecnameLB.Text == "Расшифровка специальности")
+            {
+                MessageBox.Show("Не заполненное поле!!! 'Расшифровка специальности'");
+            }
+            else if (GroupNumTB.Text == "")
+            {
+                MessageBox.Show("Не заполненное поле!!!, 'Номер Группы'");
+            }
+            else if (DateStudyMTB.Text == "")
+            {
+                MessageBox.Show("Не заполненное поле!!!, 'Номер Группы'");
+            }
+            else
+            {
+                try
+                {
+                    sqlConnection.Open();
+                    sql = $"select * from new_group_insert('{Group.Text.ToString()}', {group_name_id_text}, '{fullspecnameLB.Text.ToString()}', '{GroupNumTB.Text.ToString()}', '{DateStudyMTB.Text.ToString()}')";
+                    cmd = new NpgsqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    //cmd.Parameters.AddWithValue("_students_name", STFIOTextBox.Text.ToString());
+                    //cmd.Parameters.AddWithValue("_group_id", int.Parse(group_id_text));
+                    //cmd.Parameters.AddWithValue("_students_card", STBiletTextBox.Text.ToString());
+                    MessageBox.Show("Добавлено");
+
+                    sqlConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    sqlConnection.Close();
+                    MessageBox.Show("ОШИБКА. Error: " + ex.Message);
+
+                }
+            }
+        }
+
+        private void DGVSpecNameGR_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                rowIndex = e.RowIndex;
+                CodSpecLB.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_code"].Value.ToString();
+                fullspecnameLB.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_spec_name"].Value.ToString();
+                group_name_id_text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name_id"].Value.ToString();
+            }
         }
     }
 }
