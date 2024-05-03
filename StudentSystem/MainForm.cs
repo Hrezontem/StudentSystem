@@ -375,6 +375,20 @@ namespace StudentSystem
                 contextMenuStrip2.Show(MousePosition, ToolStripDropDownDirection.Right);
             }
         }
+
+        private void добавитьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGroupCreate NGC = new NewGroupCreate();
+            this.Hide();
+            NGC.Show();
+        }
+
+        private void добавитьСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewSpec NSC = new NewSpec();
+            this.Hide();
+            NSC.Show();
+        }
     }
 
 }
