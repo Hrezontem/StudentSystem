@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Group = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CodSpecLB = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -102,14 +104,14 @@
             this.DGVSpecNameGR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVSpecNameGR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSpecNameGR.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGVSpecNameGR.GridColor = System.Drawing.Color.White;
             this.DGVSpecNameGR.Location = new System.Drawing.Point(23, 176);
             this.DGVSpecNameGR.MultiSelect = false;
@@ -194,6 +196,7 @@
             this.DateStudyMTB.Name = "DateStudyMTB";
             this.DateStudyMTB.Size = new System.Drawing.Size(71, 15);
             this.DateStudyMTB.TabIndex = 71;
+            this.DateStudyMTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DateStudyMTB_KeyDown);
             // 
             // NewSpecINSBTN
             // 
@@ -310,7 +313,9 @@
             this.Controls.Add(this.SearchGroup);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.DGVSpecNameGR);
+            this.MaximizeBox = false;
             this.Name = "NewGroupCreate";
+            this.Resizable = false;
             this.Text = "Добавление Группы";
             this.Load += new System.EventHandler(this.NewGroupCreate_Load);
             this.groupBox4.ResumeLayout(false);
@@ -345,5 +350,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label CodSpecLB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

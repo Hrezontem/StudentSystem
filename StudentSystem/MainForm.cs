@@ -36,7 +36,9 @@ namespace StudentSystem
         private string student_card_string;
         private string students_name_string;
         private string group_full_name_string;
-        private string students_dateborn_string;
+        private DateTime students_dateborn_string;
+        private string students_id_text;
+        private string group_id_text;
 
 
         public MainForm()
@@ -68,6 +70,7 @@ namespace StudentSystem
                 DGVStudentList.Columns["group_name"].Visible = false;
                 DGVStudentList.Columns["group_name_id"].Visible = false;
                 DGVStudentList.Columns["group_num"].Visible = false;
+                DGVStudentList.Columns["group_id"].Visible = false;
                 DGVStudentList.Columns["student_card"].HeaderText = "Студенческий";
                 DGVStudentList.Columns["group_years"].HeaderText = "Годы обучения";
                 DGVStudentList.Columns["students_dateborn"].Visible = false;
@@ -98,8 +101,8 @@ namespace StudentSystem
                 DGVExpelledtList.Columns["group_full_name"].HeaderText = "Группа";
                 DGVExpelledtList.Columns["group_name"].Visible = false;
                 DGVExpelledtList.Columns["group_name_id"].Visible = false;
-                DGVExpelledtList.Columns["group_course"].Visible = false;
                 DGVExpelledtList.Columns["group_num"].Visible = false;
+                DGVExpelledtList.Columns["group_id"].Visible = false;
                 DGVExpelledtList.Columns["student_card"].HeaderText = "Студенческий";
                 DGVExpelledtList.Columns["group_years"].HeaderText = "Годы обучения";
                 DGVExpelledtList.Columns["students_dateborn"].Visible = false;
@@ -236,12 +239,15 @@ namespace StudentSystem
         {
             
             STDescription STD = new STDescription();
+            STD.group_id_text = group_id_text;
+            STD.students_id_text1 = students_id_text;
             STD.CodSpecLB.Text = group_code_string;
             STD.fullspecnameLB.Text = group_spec_name_string;
             STD.STBiletTextBox.Text = student_card_string;
             STD.STFIOTextBox.Text = students_name_string;
             STD.Group.Text = group_full_name_string;
-            STD.DateB.Text = students_dateborn_string;
+            STD.DateB.Text = students_dateborn_string.ToShortDateString();
+            STD.DTPDateBirth.Value = DateTime.Parse(students_dateborn_string.ToShortDateString());
             if (STD.STFIOTextBox.Text == "")
             { 
             MessageBox.Show("Вы не выбрали студента!!!");
@@ -266,12 +272,14 @@ namespace StudentSystem
             if (e.RowIndex >= 0)
             {
                 rowIndex = e.RowIndex;
+                students_id_text = DGVStudentList.Rows[e.RowIndex].Cells["students_id"].Value.ToString();
                 group_code_string = DGVStudentList.Rows[e.RowIndex].Cells["group_code"].Value.ToString();
                 group_spec_name_string = DGVStudentList.Rows[e.RowIndex].Cells["group_spec_name"].Value.ToString();
                 student_card_string = DGVStudentList.Rows[e.RowIndex].Cells["student_card"].Value.ToString();
                 students_name_string = DGVStudentList.Rows[e.RowIndex].Cells["students_name"].Value.ToString();
                 group_full_name_string = DGVStudentList.Rows[e.RowIndex].Cells["group_full_name"].Value.ToString();
-                students_dateborn_string = DGVStudentList.Rows[e.RowIndex].Cells["students_dateborn"].Value.ToString();
+                students_dateborn_string = DGVStudentList.Rows[e.RowIndex].Cells["students_dateborn"].Value is DateTime ? (DateTime)DGVStudentList.Rows[e.RowIndex].Cells["students_dateborn"].Value : new DateTime(1753, 01, 01);
+                group_id_text = DGVStudentList.Rows[e.RowIndex].Cells["group_id"].Value.ToString();
             }
         }
 

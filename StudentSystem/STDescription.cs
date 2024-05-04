@@ -26,8 +26,8 @@ namespace StudentSystem
         DataTable dt = new DataTable();
         private DataTable table = null;
         private int rowIndex = -1;
-        private string group_id_text;
-        
+        public string group_id_text;
+        public string students_id_text1;
 
         public STDescription()
         {
@@ -52,13 +52,13 @@ namespace StudentSystem
             }
             sqlConnection = new NpgsqlConnection(connstring);
             SelectGroup();
-
             DGVGroups.Visible = false;
 
         }
 
         private void STSave_Click(object sender, EventArgs e)
         {
+
             STFIOTextBox.Enabled = false;
             STBiletTextBox.Enabled = false;
             DTPDateBirth.Enabled = false;
@@ -71,6 +71,21 @@ namespace StudentSystem
             label1.Visible = false;
             DTPDateBirth.Visible = false;
             DateB.Visible = true;
+            try
+            {
+                sqlConnection.Open();
+                sql = $"select * from students_update({students_id_text1}, '{STFIOTextBox.Text.ToString()}', {group_id_text}, '{STBiletTextBox.Text.ToString()}', '{DTPDateBirth.Value.ToString()}', 1)";
+                cmd = new NpgsqlCommand(sql, sqlConnection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Изменено");
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
+                MessageBox.Show("ОШИБКА. Error: " + ex.Message);
+
+            }
         }
 
         private void SelectGroup()

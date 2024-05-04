@@ -37,6 +37,8 @@ namespace StudentSystem
         {
             sqlConnection = new NpgsqlConnection(connstring);
             SelectGroup();
+
+            DateStudyMTB.KeyDown += new KeyEventHandler(DateStudyMTB_KeyDown);
         }
 
         private void BTNBacMain1_Click(object sender, EventArgs e)
@@ -123,6 +125,11 @@ namespace StudentSystem
                 fullspecnameLB.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_spec_name"].Value.ToString();
                 group_name_id_text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name_id"].Value.ToString();
             }
+        }
+
+        private void DateStudyMTB_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

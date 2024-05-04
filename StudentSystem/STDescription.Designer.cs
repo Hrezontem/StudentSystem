@@ -160,7 +160,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DTPDateBirth.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DTPDateBirth.CustomFormat = "dd--MM-yyyy";
+            this.DTPDateBirth.CustomFormat = "yyyy-MM-dd";
             this.DTPDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPDateBirth.Location = new System.Drawing.Point(38, 106);
             this.DTPDateBirth.Name = "DTPDateBirth";

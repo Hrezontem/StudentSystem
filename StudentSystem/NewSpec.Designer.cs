@@ -74,7 +74,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(41, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 16);
+            this.label3.Size = new System.Drawing.Size(161, 16);
             this.label3.TabIndex = 27;
             this.label3.Text = "Полное наименование:";
             // 
@@ -84,7 +84,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(41, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 16);
+            this.label2.Size = new System.Drawing.Size(138, 16);
             this.label2.TabIndex = 26;
             this.label2.Text = "Код специальности:";
             // 
@@ -94,7 +94,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(41, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.Size = new System.Drawing.Size(110, 16);
             this.label1.TabIndex = 25;
             this.label1.Text = "Наименование:";
             // 
@@ -133,7 +133,9 @@
             this.Controls.Add(this.FullSpecNameTB);
             this.Controls.Add(this.CodSpecTB);
             this.Controls.Add(this.SpecNameTB);
+            this.MaximizeBox = false;
             this.Name = "NewSpec";
+            this.Resizable = false;
             this.Text = "Новая Специальность";
             this.Load += new System.EventHandler(this.NewSpec_Load);
             this.ResumeLayout(false);

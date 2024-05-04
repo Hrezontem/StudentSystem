@@ -41,15 +41,15 @@ namespace StudentSystem
         {
             if (SpecNameTB.Text == "")
             {
-                MessageBox.Show("Есть не заполненные поля!!!");
+                MessageBox.Show("Не заполненное поле!!! 'Наименование'");
             }
             else if (CodSpecTB.Text == "")
             {
-                MessageBox.Show("Есть не заполненные поля!!!");
+                MessageBox.Show("Не заполненное поле!!! 'Код специальности'");
             }
             else if (FullSpecNameTB.Text == "")
             {
-                MessageBox.Show("Есть не заполненные поля!!!");
+                MessageBox.Show("Не заполненное поле!!! 'Полное наименование'");
             }
             else
             {
