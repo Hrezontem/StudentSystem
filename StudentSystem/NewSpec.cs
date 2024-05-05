@@ -34,34 +34,32 @@ namespace StudentSystem
 
         private void NewSpec_Load(object sender, EventArgs e)
         {
-            
+            sqlConnection = new NpgsqlConnection(connstring);
+
         }
 
         private void NewSpecINSBTN_Click(object sender, EventArgs e)
         {
-            if (SpecNameTB.Text == "")
-            {
-                MessageBox.Show("Не заполненное поле!!! 'Наименование'");
-            }
-            else if (CodSpecTB.Text == "")
-            {
-                MessageBox.Show("Не заполненное поле!!! 'Код специальности'");
-            }
-            else if (FullSpecNameTB.Text == "")
-            {
-                MessageBox.Show("Не заполненное поле!!! 'Полное наименование'");
-            }
-            else
-            {
+            //if (SpecNameTB.Text == "")
+            //{
+            //    MessageBox.Show("Не заполненное поле!!! 'Наименование'");
+            //}
+            //else if (CodSpecTB.Text == "")
+            //{
+            //    MessageBox.Show("Не заполненное поле!!! 'Код специальности'");
+            //}
+            //else if (FullSpecNameTB.Text == "")
+            //{
+            //    MessageBox.Show("Не заполненное поле!!! 'Полное наименование'");
+            //}
+            //else
+            //{
                 try
                 {
                     sqlConnection.Open();
                     sql = $"select * from spec_insert('{SpecNameTB.Text.ToString()}', '{CodSpecTB.Text.ToString()}', '{FullSpecNameTB.Text.ToString()}')";
                     cmd = new NpgsqlCommand(sql, sqlConnection);
                     cmd.ExecuteNonQuery();
-                    //cmd.Parameters.AddWithValue("_students_name", STFIOTextBox.Text.ToString());
-                    //cmd.Parameters.AddWithValue("_group_id", int.Parse(group_id_text));
-                    //cmd.Parameters.AddWithValue("_students_card", STBiletTextBox.Text.ToString());
                     MessageBox.Show("Добавлено");
 
                     sqlConnection.Close();
@@ -72,7 +70,7 @@ namespace StudentSystem
                     MessageBox.Show("ОШИБКА. Error: " + ex.Message);
 
                 }
-            } 
+            //} 
         }
 
         private void BTNBacMain1_Click(object sender, EventArgs e)

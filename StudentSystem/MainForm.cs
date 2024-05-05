@@ -247,15 +247,14 @@ namespace StudentSystem
             STD.STFIOTextBox.Text = students_name_string;
             STD.Group.Text = group_full_name_string;
             STD.DateB.Text = students_dateborn_string.ToShortDateString();
-            STD.DTPDateBirth.Value = DateTime.Parse(students_dateborn_string.ToShortDateString());
             if (STD.STFIOTextBox.Text == "")
             { 
             MessageBox.Show("Вы не выбрали студента!!!");
             }
             else
             {
+                STD.DTPDateBirth.Value = DateTime.Parse(students_dateborn_string.ToShortDateString());
                 this.Hide();
-
                 STD.Show();
             }
             

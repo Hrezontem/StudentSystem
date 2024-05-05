@@ -29,66 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Group = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.DGVSpecNameGR = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Group = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.SearchGroup = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GroupNumTB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DateStudyMTB = new System.Windows.Forms.MaskedTextBox();
-            this.NewSpecINSBTN = new System.Windows.Forms.Button();
             this.BTNBacMain1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NewSpecINSBTN = new System.Windows.Forms.Button();
             this.fullspecnameLB = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.CodSpecLB = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox4.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.Group);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(23, 121);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(221, 49);
-            this.groupBox4.TabIndex = 64;
-            this.groupBox4.TabStop = false;
-            // 
-            // Group
-            // 
-            this.Group.AutoSize = true;
-            this.Group.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.Group.Location = new System.Drawing.Point(118, 19);
-            this.Group.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.Group.Name = "Group";
-            this.Group.Size = new System.Drawing.Size(18, 19);
-            this.Group.TabIndex = 57;
-            this.Group.Text = "...";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label2.Location = new System.Drawing.Point(4, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 10, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 19);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Специальность";
             // 
             // DGVSpecNameGR
             // 
@@ -104,14 +69,14 @@
             this.DGVSpecNameGR.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVSpecNameGR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSpecNameGR.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSpecNameGR.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGVSpecNameGR.GridColor = System.Drawing.Color.White;
             this.DGVSpecNameGR.Location = new System.Drawing.Point(23, 176);
             this.DGVSpecNameGR.MultiSelect = false;
@@ -125,6 +90,51 @@
             this.DGVSpecNameGR.TabStop = false;
             this.DGVSpecNameGR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVSpecNameGR_CellClick);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
+            this.label2.Location = new System.Drawing.Point(4, 19);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 10, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Специальность";
+            // 
+            // Group
+            // 
+            this.Group.AutoSize = true;
+            this.Group.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
+            this.Group.Location = new System.Drawing.Point(118, 19);
+            this.Group.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.Group.Name = "Group";
+            this.Group.Size = new System.Drawing.Size(18, 19);
+            this.Group.TabIndex = 57;
+            this.Group.Text = "...";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Group);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Location = new System.Drawing.Point(22, 76);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(221, 49);
+            this.groupBox4.TabIndex = 64;
+            this.groupBox4.TabStop = false;
+            // 
+            // SearchGroup
+            // 
+            this.SearchGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchGroup.Location = new System.Drawing.Point(22, 150);
+            this.SearchGroup.Name = "SearchGroup";
+            this.SearchGroup.Size = new System.Drawing.Size(222, 20);
+            this.SearchGroup.TabIndex = 65;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -132,22 +142,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label1.Location = new System.Drawing.Point(19, 73);
+            this.label1.Location = new System.Drawing.Point(19, 128);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 19);
             this.label1.TabIndex = 66;
             this.label1.Text = "Поиск по специальности";
             // 
-            // SearchGroup
+            // GroupNumTB
             // 
-            this.SearchGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GroupNumTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchGroup.Location = new System.Drawing.Point(22, 95);
-            this.SearchGroup.Name = "SearchGroup";
-            this.SearchGroup.Size = new System.Drawing.Size(222, 20);
-            this.SearchGroup.TabIndex = 65;
+            this.GroupNumTB.Location = new System.Drawing.Point(21, 510);
+            this.GroupNumTB.Name = "GroupNumTB";
+            this.GroupNumTB.Size = new System.Drawing.Size(222, 20);
+            this.GroupNumTB.TabIndex = 67;
             // 
             // label3
             // 
@@ -162,16 +172,6 @@
             this.label3.Size = new System.Drawing.Size(102, 19);
             this.label3.TabIndex = 68;
             this.label3.Text = "Номер группы";
-            // 
-            // GroupNumTB
-            // 
-            this.GroupNumTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupNumTB.Location = new System.Drawing.Point(21, 510);
-            this.GroupNumTB.Name = "GroupNumTB";
-            this.GroupNumTB.Size = new System.Drawing.Size(222, 20);
-            this.GroupNumTB.TabIndex = 67;
             // 
             // label4
             // 
@@ -198,21 +198,6 @@
             this.DateStudyMTB.TabIndex = 71;
             this.DateStudyMTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DateStudyMTB_KeyDown);
             // 
-            // NewSpecINSBTN
-            // 
-            this.NewSpecINSBTN.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.NewSpecINSBTN.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.NewSpecINSBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewSpecINSBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NewSpecINSBTN.ForeColor = System.Drawing.Color.White;
-            this.NewSpecINSBTN.Location = new System.Drawing.Point(38, 589);
-            this.NewSpecINSBTN.Name = "NewSpecINSBTN";
-            this.NewSpecINSBTN.Size = new System.Drawing.Size(195, 30);
-            this.NewSpecINSBTN.TabIndex = 73;
-            this.NewSpecINSBTN.Text = "Добавить";
-            this.NewSpecINSBTN.UseVisualStyleBackColor = false;
-            this.NewSpecINSBTN.Click += new System.EventHandler(this.NewSpecINSBTN_Click);
-            // 
             // BTNBacMain1
             // 
             this.BTNBacMain1.BackColor = System.Drawing.Color.LightSlateGray;
@@ -228,24 +213,20 @@
             this.BTNBacMain1.UseVisualStyleBackColor = false;
             this.BTNBacMain1.Click += new System.EventHandler(this.BTNBacMain1_Click);
             // 
-            // label5
+            // NewSpecINSBTN
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(22, 294);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(218, 17);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Полное название специальности";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.fullspecnameLB);
-            this.groupBox1.Location = new System.Drawing.Point(21, 314);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 84);
-            this.groupBox1.TabIndex = 75;
-            this.groupBox1.TabStop = false;
+            this.NewSpecINSBTN.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.NewSpecINSBTN.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.NewSpecINSBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewSpecINSBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NewSpecINSBTN.ForeColor = System.Drawing.Color.White;
+            this.NewSpecINSBTN.Location = new System.Drawing.Point(38, 589);
+            this.NewSpecINSBTN.Name = "NewSpecINSBTN";
+            this.NewSpecINSBTN.Size = new System.Drawing.Size(195, 30);
+            this.NewSpecINSBTN.TabIndex = 73;
+            this.NewSpecINSBTN.Text = "Добавить";
+            this.NewSpecINSBTN.UseVisualStyleBackColor = false;
+            this.NewSpecINSBTN.Click += new System.EventHandler(this.NewSpecINSBTN_Click);
             // 
             // fullspecnameLB
             // 
@@ -261,26 +242,24 @@
             this.fullspecnameLB.Text = "Расшифровка специальности";
             this.fullspecnameLB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // groupBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(19, 411);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 17);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "Код специальности/профессии";
+            this.groupBox1.Controls.Add(this.fullspecnameLB);
+            this.groupBox1.Location = new System.Drawing.Point(21, 314);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(222, 84);
+            this.groupBox1.TabIndex = 75;
+            this.groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // label5
             // 
-            this.groupBox2.Controls.Add(this.CodSpecLB);
-            this.groupBox2.Location = new System.Drawing.Point(22, 431);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.groupBox2.Size = new System.Drawing.Size(206, 40);
-            this.groupBox2.TabIndex = 77;
-            this.groupBox2.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(22, 294);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(218, 17);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Полное название специальности";
             // 
             // CodSpecLB
             // 
@@ -293,6 +272,27 @@
             this.CodSpecLB.Size = new System.Drawing.Size(33, 19);
             this.CodSpecLB.TabIndex = 13;
             this.CodSpecLB.Text = "Код";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CodSpecLB);
+            this.groupBox2.Location = new System.Drawing.Point(22, 431);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.groupBox2.Size = new System.Drawing.Size(206, 40);
+            this.groupBox2.TabIndex = 77;
+            this.groupBox2.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(19, 411);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(206, 17);
+            this.label6.TabIndex = 76;
+            this.label6.Text = "Код специальности/профессии";
             // 
             // NewGroupCreate
             // 
@@ -316,11 +316,11 @@
             this.MaximizeBox = false;
             this.Name = "NewGroupCreate";
             this.Resizable = false;
-            this.Text = "Добавление Группы";
+            this.Text = "Добавление группы";
             this.Load += new System.EventHandler(this.NewGroupCreate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -331,25 +331,24 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.Label Group;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.DataGridView DGVSpecNameGR;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label Group;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox SearchGroup;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox GroupNumTB;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox DateStudyMTB;
-        private System.Windows.Forms.Button NewSpecINSBTN;
         private System.Windows.Forms.Button BTNBacMain1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button NewSpecINSBTN;
         private System.Windows.Forms.Label fullspecnameLB;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label CodSpecLB;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
     }
 }

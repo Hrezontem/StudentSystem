@@ -97,12 +97,9 @@ namespace StudentSystem
                 try
                 {
                     sqlConnection.Open();
-                    sql = $"select * from new_group_insert('{Group.Text.ToString()}', {group_name_id_text}, '{fullspecnameLB.Text.ToString()}', '{GroupNumTB.Text.ToString()}', '{DateStudyMTB.Text.ToString()}')";
+                    sql = $"select * from group_insert({group_name_id_text}, '{GroupNumTB.Text.ToString()}', '{DateStudyMTB.Text.ToString()}' )";
                     cmd = new NpgsqlCommand(sql, sqlConnection);
                     cmd.ExecuteNonQuery();
-                    //cmd.Parameters.AddWithValue("_students_name", STFIOTextBox.Text.ToString());
-                    //cmd.Parameters.AddWithValue("_group_id", int.Parse(group_id_text));
-                    //cmd.Parameters.AddWithValue("_students_card", STBiletTextBox.Text.ToString());
                     MessageBox.Show("Добавлено");
 
                     sqlConnection.Close();
@@ -124,6 +121,7 @@ namespace StudentSystem
                 CodSpecLB.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_code"].Value.ToString();
                 fullspecnameLB.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_spec_name"].Value.ToString();
                 group_name_id_text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name_id"].Value.ToString();
+                Group.Text = DGVSpecNameGR.Rows[e.RowIndex].Cells["group_name"].Value.ToString();
             }
         }
 
