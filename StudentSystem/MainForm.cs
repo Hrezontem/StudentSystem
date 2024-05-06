@@ -50,12 +50,12 @@ namespace StudentSystem
         }
 
 
-        private void Select()
+        private void Select(string sql_st)
         {
             try
             {
                 sqlConnection.Open();
-                sql = @"select * from students_select(1)";
+                sql = sql_st; //@"select * from students_select(1)";
                 cmd = new NpgsqlCommand(sql, sqlConnection);
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
@@ -82,31 +82,54 @@ namespace StudentSystem
                 MessageBox.Show("ERROR: " + ex.Message);
             }
         }
-        private void SelectEx()
+        
+
+        //-------------------Выборка Групп---------------------------
+        private void SelectGroups()
         {
             try
             {
                 sqlConnection.Open();
-                sql = @"select * from students_select(2)";
+                sql = @"select * from group_select()";
                 cmd = new NpgsqlCommand(sql, sqlConnection);
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
                 sqlConnection.Close();
-                DGVExpelledtList.DataSource = null;
-                DGVExpelledtList.DataSource = dt;
-                DGVExpelledtList.Columns["students_id"].Visible = false;
-                DGVExpelledtList.Columns["students_name"].HeaderText = "ФИО";
-                DGVExpelledtList.Columns["group_spec_name"].Visible = false;
-                DGVExpelledtList.Columns["group_code"].Visible = false;
-                DGVExpelledtList.Columns["group_full_name"].HeaderText = "Группа";
-                DGVExpelledtList.Columns["group_name"].Visible = false;
-                DGVExpelledtList.Columns["group_name_id"].Visible = false;
-                DGVExpelledtList.Columns["group_num"].Visible = false;
-                DGVExpelledtList.Columns["group_id"].Visible = false;
-                DGVExpelledtList.Columns["student_card"].HeaderText = "Студенческий";
-                DGVExpelledtList.Columns["group_years"].HeaderText = "Годы обучения";
-                DGVExpelledtList.Columns["students_dateborn"].Visible = false;
-                DGVExpelledtList.ClearSelection();
+                DGVGroups.DataSource = null;
+                DGVGroups.DataSource = dt;
+                DGVGroups.Columns["group_id"].Visible = false;
+                DGVGroups.Columns["group_full_name"].HeaderText = "Группа";
+                DGVGroups.Columns["group_spec_name"].Visible = false;
+                DGVGroups.Columns["group_code"].Visible = false;
+                DGVGroups.ClearSelection();
+
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        //-------------------Выборка Специальностей---------------------------
+        private void SelectSpec()
+        {
+            try
+            {
+                sqlConnection.Open();
+                sql = @"select * from group_name";
+                cmd = new NpgsqlCommand(sql, sqlConnection);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                sqlConnection.Close();
+                DGVSpec.DataSource = null;
+                DGVSpec.DataSource = dt;
+                DGVSpec.Columns["group_name"].HeaderText = "Специальности";
+                DGVSpec.Columns["group_spec_name"].Visible = false;
+                DGVSpec.Columns["group_name_id"].Visible = false;
+                DGVSpec.Columns["group_code"].Visible = false;
+
+                DGVSpec.ClearSelection();
 
             }
             catch (Exception ex)
@@ -119,11 +142,10 @@ namespace StudentSystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
-            Select();
+            Select(@"select * from students_select(1)");
+            SelectSpec();
+            SelectGroups();
             CBGroup.SelectedIndex = 0;
-
-
-
         }
 
         private void BTNInsertST_Click(object sender, EventArgs e)
@@ -139,7 +161,7 @@ namespace StudentSystem
 
 
             DataView dv = dt.DefaultView;
-            dv.RowFilter = $"{sort_textbox} LIKE '" + SearchST.Text + "%'";
+            dv.RowFilter = $"{ sort_textbox} LIKE '" + SearchST.Text + "%'";
             DGVStudentList.DataSource = dv;
         }
 
@@ -322,7 +344,7 @@ namespace StudentSystem
                         cmd.ExecuteNonQuery();
                         sqlConnection.Close();
                         MessageBox.Show("Отменено");
-                        SelectEx();
+                        Select(@"select * from students_select(2)");
                     }
                     catch (Exception ex)
                     {
@@ -353,7 +375,7 @@ namespace StudentSystem
                         cmd.ExecuteNonQuery();
                         sqlConnection.Close();
                         MessageBox.Show("Удалено успешно");
-                        SelectEx();
+                        Select(@"select * from students_select(2)");
                     }
                     catch (Exception ex)
                     {
@@ -367,10 +389,10 @@ namespace StudentSystem
         {
             if (TCST.SelectedTab == TPAllST)
             {
-                Select();
+                Select(@"select * from students_select(1)");
             } else
             {
-                SelectEx();
+                Select(@"select * from students_select(2)");
             }
         }
 
@@ -394,6 +416,75 @@ namespace StudentSystem
             NewSpec NSC = new NewSpec();
             this.Hide();
             NSC.Show();
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCSpecGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TCSpecGroups.SelectedTab == TPAllST)
+            {
+                SelectGroups();
+            }
+            else
+            {
+                SelectSpec();
+            }
+        }
+
+        private void удалитьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var drez = MessageBox.Show(
+               "Вы уверены???",
+               "ВНИМАНИЕ!!!",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Warning,
+               MessageBoxDefaultButton.Button1
+               );
+            if (drez == DialogResult.Yes)
+                foreach (DataGridViewRow row in DGVExpelledtList.SelectedRows)
+                {
+
+                    try
+                    {
+                        sqlConnection.Open();
+                        sql = $"select * from students_delete({int.Parse(row.Cells["students_id"].Value.ToString())}, 2)";
+                        cmd = new NpgsqlCommand(sql, sqlConnection);
+                        cmd.ExecuteNonQuery();
+                        sqlConnection.Close();
+                        MessageBox.Show("Удалено успешно");
+                        Select(@"select * from students_select(2)");
+                    }
+                    catch (Exception ex)
+                    {
+                        sqlConnection.Close();
+                        MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
+                    }
+                }
+        }
+
+        private void DGVSpec_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CMSDelSpec.Show(MousePosition, ToolStripDropDownDirection.Right);
+            }
+        }
+
+        private void DGVGroups_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CMSDelGroup.Show(MousePosition, ToolStripDropDownDirection.Right);
+            }
+        }
+
+        private void удалитьСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

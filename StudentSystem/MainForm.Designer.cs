@@ -35,6 +35,12 @@ namespace StudentSystem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVStudentList = new System.Windows.Forms.DataGridView();
             this.BTNInsertST = new System.Windows.Forms.Button();
             this.BTNSTInfo = new System.Windows.Forms.Button();
@@ -63,6 +69,15 @@ namespace StudentSystem
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьСтудентаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TCSpecGroups = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.DGVSpec = new System.Windows.Forms.DataGridView();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.DGVGroups = new System.Windows.Forms.DataGridView();
+            this.CMSDelGroup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMSDelSpec = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьСпециальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudentList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -73,6 +88,13 @@ namespace StudentSystem
             this.TPEXST.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVExpelledtList)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            this.TCSpecGroups.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSpec)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).BeginInit();
+            this.CMSDelGroup.SuspendLayout();
+            this.CMSDelSpec.SuspendLayout();
             this.SuspendLayout();
             // 
             // DGVStudentList
@@ -101,7 +123,7 @@ namespace StudentSystem
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVStudentList.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVStudentList.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.DGVStudentList.Location = new System.Drawing.Point(0, 3);
+            this.DGVStudentList.Location = new System.Drawing.Point(3, 3);
             this.DGVStudentList.MultiSelect = false;
             this.DGVStudentList.Name = "DGVStudentList";
             this.DGVStudentList.ReadOnly = true;
@@ -416,11 +438,169 @@ namespace StudentSystem
             this.удалитьСтудентаToolStripMenuItem1.Text = "Удалить студента";
             this.удалитьСтудентаToolStripMenuItem1.Click += new System.EventHandler(this.удалитьСтудентаToolStripMenuItem1_Click);
             // 
+            // TCSpecGroups
+            // 
+            this.TCSpecGroups.Controls.Add(this.metroTabPage1);
+            this.TCSpecGroups.Controls.Add(this.metroTabPage2);
+            this.TCSpecGroups.Location = new System.Drawing.Point(34, 162);
+            this.TCSpecGroups.Name = "TCSpecGroups";
+            this.TCSpecGroups.SelectedIndex = 1;
+            this.TCSpecGroups.Size = new System.Drawing.Size(207, 289);
+            this.TCSpecGroups.TabIndex = 18;
+            this.TCSpecGroups.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.DGVSpec);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(199, 250);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "Специальности";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            // 
+            // DGVSpec
+            // 
+            this.DGVSpec.AllowUserToAddRows = false;
+            this.DGVSpec.AllowUserToDeleteRows = false;
+            this.DGVSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVSpec.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGVSpec.BackgroundColor = System.Drawing.Color.White;
+            this.DGVSpec.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGVSpec.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSpec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DGVSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVSpec.ColumnHeadersVisible = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVSpec.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DGVSpec.GridColor = System.Drawing.Color.White;
+            this.DGVSpec.Location = new System.Drawing.Point(3, 3);
+            this.DGVSpec.MultiSelect = false;
+            this.DGVSpec.Name = "DGVSpec";
+            this.DGVSpec.ReadOnly = true;
+            this.DGVSpec.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVSpec.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.DGVSpec.RowHeadersVisible = false;
+            this.DGVSpec.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DGVSpec.Size = new System.Drawing.Size(193, 247);
+            this.DGVSpec.TabIndex = 48;
+            this.DGVSpec.TabStop = false;
+            this.DGVSpec.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVSpec_CellMouseClick);
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.DGVGroups);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(199, 250);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Группы";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            // 
+            // DGVGroups
+            // 
+            this.DGVGroups.AllowUserToAddRows = false;
+            this.DGVGroups.AllowUserToDeleteRows = false;
+            this.DGVGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVGroups.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGVGroups.BackgroundColor = System.Drawing.Color.White;
+            this.DGVGroups.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DGVGroups.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVGroups.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.DGVGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVGroups.ColumnHeadersVisible = false;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVGroups.DefaultCellStyle = dataGridViewCellStyle10;
+            this.DGVGroups.GridColor = System.Drawing.Color.White;
+            this.DGVGroups.Location = new System.Drawing.Point(3, 3);
+            this.DGVGroups.MultiSelect = false;
+            this.DGVGroups.Name = "DGVGroups";
+            this.DGVGroups.ReadOnly = true;
+            this.DGVGroups.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVGroups.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.DGVGroups.RowHeadersVisible = false;
+            this.DGVGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DGVGroups.Size = new System.Drawing.Size(193, 247);
+            this.DGVGroups.TabIndex = 48;
+            this.DGVGroups.TabStop = false;
+            this.DGVGroups.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVGroups_CellMouseClick);
+            // 
+            // CMSDelGroup
+            // 
+            this.CMSDelGroup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьГруппуToolStripMenuItem});
+            this.CMSDelGroup.Name = "contextMenuStrip3";
+            this.CMSDelGroup.Size = new System.Drawing.Size(161, 26);
+            // 
+            // удалитьГруппуToolStripMenuItem
+            // 
+            this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
+            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.удалитьГруппуToolStripMenuItem.Text = "Удалить Группу";
+            this.удалитьГруппуToolStripMenuItem.Click += new System.EventHandler(this.удалитьГруппуToolStripMenuItem_Click);
+            // 
+            // CMSDelSpec
+            // 
+            this.CMSDelSpec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьСпециальностьToolStripMenuItem});
+            this.CMSDelSpec.Name = "CMSDelSpec";
+            this.CMSDelSpec.Size = new System.Drawing.Size(207, 48);
+            // 
+            // удалитьСпециальностьToolStripMenuItem
+            // 
+            this.удалитьСпециальностьToolStripMenuItem.Name = "удалитьСпециальностьToolStripMenuItem";
+            this.удалитьСпециальностьToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.удалитьСпециальностьToolStripMenuItem.Text = "Удалить Специальность";
+            this.удалитьСпециальностьToolStripMenuItem.Click += new System.EventHandler(this.удалитьСпециальностьToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 655);
+            this.Controls.Add(this.TCSpecGroups);
             this.Controls.Add(this.TCST);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -451,6 +631,13 @@ namespace StudentSystem
             this.TPEXST.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVExpelledtList)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            this.TCSpecGroups.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSpec)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).EndInit();
+            this.CMSDelGroup.ResumeLayout(false);
+            this.CMSDelSpec.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,6 +672,15 @@ namespace StudentSystem
         private System.Windows.Forms.ToolStripMenuItem добавитьГруппуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьСпециальностьToolStripMenuItem;
         public System.Windows.Forms.DataGridView DGVStudentList;
+        private MetroFramework.Controls.MetroTabControl TCSpecGroups;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        public System.Windows.Forms.DataGridView DGVSpec;
+        public System.Windows.Forms.DataGridView DGVGroups;
+        private System.Windows.Forms.ContextMenuStrip CMSDelGroup;
+        private System.Windows.Forms.ToolStripMenuItem удалитьГруппуToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CMSDelSpec;
+        private System.Windows.Forms.ToolStripMenuItem удалитьСпециальностьToolStripMenuItem;
     }
 }
 
