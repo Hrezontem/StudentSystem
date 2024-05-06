@@ -139,6 +139,7 @@ namespace StudentSystem
             }
         }
 
+        //*****************************************Объявление Формы*********************************************
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
@@ -148,6 +149,7 @@ namespace StudentSystem
             CBGroup.SelectedIndex = 0;
         }
 
+        //*****************************************Переход на форму. Добавление студента*********************************************
         private void BTNInsertST_Click(object sender, EventArgs e)
         {
             STNewStForm STI = new STNewStForm();
@@ -155,6 +157,7 @@ namespace StudentSystem
             STI.Show();
         }
 
+        //*****************************************Поиск*********************************************
         private void SearchST_TextChanged(object sender, EventArgs e)
         {
 
@@ -164,6 +167,8 @@ namespace StudentSystem
             dv.RowFilter = $"{ sort_textbox} LIKE '" + SearchST.Text + "%'";
             DGVStudentList.DataSource = dv;
         }
+
+        //*****************************************Контекст Меню "Отчислить"*********************************************
 
         private void перенестиВОтчисленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -197,6 +202,8 @@ namespace StudentSystem
                     }
                 }
         }
+
+        //****************************************Контекст меню "Отчислить/Удалить"*******************************************
 
         private void DGVStudentList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
