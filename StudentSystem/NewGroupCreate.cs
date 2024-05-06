@@ -129,5 +129,12 @@ namespace StudentSystem
         {
 
         }
+
+        private void NewGroupCreate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainForm MF = new MainForm();
+            this.Hide();
+            MF.Show();
+        }
     }
 }

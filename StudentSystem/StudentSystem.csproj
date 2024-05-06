@@ -105,6 +105,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutGroupForm.Designer.cs">
+      <DependentUpon>AboutGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnDBForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutGroupForm.resx">
+      <DependentUpon>AboutGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnDBForm.resx">
       <DependentUpon>ConnDBForm.cs</DependentUpon>
     </EmbeddedResource>

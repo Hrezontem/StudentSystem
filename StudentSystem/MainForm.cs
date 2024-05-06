@@ -18,11 +18,13 @@ namespace StudentSystem
     public partial class MainForm : MetroForm
     {
 
+        //*****************************************Подключение Базы Данных*********************************************
         private string connstring = String.Format("Server={0};Port={1};" +
             "User Id={2};Password={3};Database={4}",
             $"{Properties.Settings.Default.address_base}", $"{Properties.Settings.Default.port_base}", $"{Properties.Settings.Default.login_base}",
             $"{Properties.Settings.Default.password_base}", $"{Properties.Settings.Default.name_base}");
 
+        //*****************************************Локальные переменные*********************************************
         private NpgsqlConnection sqlConnection;
         private NpgsqlDataAdapter da = null;
         private string sql;
@@ -49,7 +51,7 @@ namespace StudentSystem
             
         }
 
-
+        //*****************************************Выборка. Актульные студенты/Отчисленные*********************************************
         private void Select(string sql_st)
         {
             try
@@ -84,7 +86,7 @@ namespace StudentSystem
         }
         
 
-        //-------------------Выборка Групп---------------------------
+        //---------------------------------------------Выборка Групп------------------------------------------------------
         private void SelectGroups()
         {
             try
@@ -111,7 +113,7 @@ namespace StudentSystem
             }
         }
 
-        //-------------------Выборка Специальностей---------------------------
+        //------------------------------------------Выборка Специальностей-----------------------------------------------
         private void SelectSpec()
         {
             try
@@ -139,17 +141,17 @@ namespace StudentSystem
             }
         }
 
-        //*****************************************Объявление Формы*********************************************
+        //---------------------------------------------------Объявление Формы--------------------------------------------------------
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
             Select(@"select * from students_select(1)");
             SelectSpec();
             SelectGroups();
-            CBGroup.SelectedIndex = 0;
+            CBSelectSearch.SelectedIndex = 0;
         }
 
-        //*****************************************Переход на форму. Добавление студента*********************************************
+        //---------------------------------------Переход на форму. Добавление студента-----------------------------------------------
         private void BTNInsertST_Click(object sender, EventArgs e)
         {
             STNewStForm STI = new STNewStForm();
@@ -157,7 +159,7 @@ namespace StudentSystem
             STI.Show();
         }
 
-        //*****************************************Поиск*********************************************
+        //---------------------------------------------------------Поиск-------------------------------------------------------------
         private void SearchST_TextChanged(object sender, EventArgs e)
         {
 
@@ -168,8 +170,7 @@ namespace StudentSystem
             DGVStudentList.DataSource = dv;
         }
 
-        //*****************************************Контекст Меню "Отчислить"*********************************************
-
+        //----------------------------------------------Контекст Меню "Отчислить"----------------------------------------------------
         private void перенестиВОтчисленныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var drez1 = MessageBox.Show(
@@ -203,7 +204,7 @@ namespace StudentSystem
                 }
         }
 
-        //****************************************Контекст меню "Отчислить/Удалить"*******************************************
+        //--------------------------------------Контекст меню "Отчислить/Удалить" в DGVStudentList-----------------------------------
 
         private void DGVStudentList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -218,16 +219,16 @@ namespace StudentSystem
             SearchST.ForeColor = Color.Black;
         }
 
-        //***************************************************************************************************************
+        //---------------------------------------------------------------------------------------------------------------------------
 
         private void CBCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
      
 
         }
-    
-    
 
+
+        //------------------------------------------Удаление студента из базы в DGVStudentList---------------------------------------
         private void удалитьСтудентаToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -264,6 +265,7 @@ namespace StudentSystem
             
         }
 
+        //---------------------------------------------Подробная информация о студенте----------------------------------------------
         private void BTNSTInfo_Click(object sender, EventArgs e)
         {
             
@@ -294,9 +296,9 @@ namespace StudentSystem
 
         }
 
+        //-----------------------------------Захват Данных с DGVStudentList для STDescription-------------------------------------
         private void DGVStudentList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            STDescription ST = new STDescription();
             if (e.RowIndex >= 0)
             {
                 rowIndex = e.RowIndex;
@@ -311,6 +313,7 @@ namespace StudentSystem
             }
         }
 
+        //---------------------------------Переход на форму "Настройки подключения"----------------------------------------------
         private void настройкиПодключенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConnDBForm connDBForm = new ConnDBForm();
@@ -318,19 +321,21 @@ namespace StudentSystem
             connDBForm.Show();
         }
 
-        private void CBGroup_SelectedIndexChanged(object sender, EventArgs e)
+        //-------------------------------------Тип Поиска по "ФИО" и "Группам"---------------------------------------------------
+        private void CBSelectSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CBGroup.SelectedIndex == 0)
+            if (CBSelectSearch.SelectedIndex == 0)
             {
                 sort_textbox = "group_full_name";
             }
-            else if (CBGroup.SelectedIndex == 1)
+            else if (CBSelectSearch.SelectedIndex == 1)
             {
                 sort_textbox = "students_name";
 
             }
         }
 
+        //-------------------------------------Отмена Отчисления в DGVExpelledtList---------------------------------------------------
         private void отменитьИзмененияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var drez1 = MessageBox.Show(
@@ -361,6 +366,7 @@ namespace StudentSystem
                 }
         }
 
+        //-----------------------------------------Удаление студента из базы в DGVExpelledtList-------------------------------------
         private void удалитьСтудентаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var drez = MessageBox.Show(
@@ -392,6 +398,7 @@ namespace StudentSystem
                 }
         }
 
+        //-------------------------Выборка актуальных студентов в DGVStudentList и отчисленных в DGVExpelledtList-------------------
         private void TCST_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (TCST.SelectedTab == TPAllST)
@@ -403,6 +410,7 @@ namespace StudentSystem
             }
         }
 
+        //--------------------------------------Контекст меню "Отчислить/Удалить" в DGVExpelledtList-----------------------------------
         private void DGVExpelledtList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -411,6 +419,7 @@ namespace StudentSystem
             }
         }
 
+        //--------------------------------------------------Добавление группы студентов------------------------------------------------
         private void добавитьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGroupCreate NGC = new NewGroupCreate();
@@ -418,6 +427,7 @@ namespace StudentSystem
             NGC.Show();
         }
 
+        //-----------------------------------------------Добавление специальности студентов--------------------------------------------
         private void добавитьСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewSpec NSC = new NewSpec();
@@ -430,6 +440,7 @@ namespace StudentSystem
 
         }
 
+        //------------------------------------------Выборка групп в DGVGroups и специальностей в DGVSpec-------------------------------
         private void TCSpecGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (TCSpecGroups.SelectedTab == TPAllST)
@@ -442,37 +453,15 @@ namespace StudentSystem
             }
         }
 
-        private void удалитьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
+        //------------------------------------Удаление группы со студентами в DGVGroups и их отчисление-------------------------------
+        private void изменитьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var drez = MessageBox.Show(
-               "Вы уверены???",
-               "ВНИМАНИЕ!!!",
-               MessageBoxButtons.YesNo,
-               MessageBoxIcon.Warning,
-               MessageBoxDefaultButton.Button1
-               );
-            if (drez == DialogResult.Yes)
-                foreach (DataGridViewRow row in DGVExpelledtList.SelectedRows)
-                {
-
-                    try
-                    {
-                        sqlConnection.Open();
-                        sql = $"select * from students_delete({int.Parse(row.Cells["students_id"].Value.ToString())}, 2)";
-                        cmd = new NpgsqlCommand(sql, sqlConnection);
-                        cmd.ExecuteNonQuery();
-                        sqlConnection.Close();
-                        MessageBox.Show("Удалено успешно");
-                        Select(@"select * from students_select(2)");
-                    }
-                    catch (Exception ex)
-                    {
-                        sqlConnection.Close();
-                        MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
-                    }
-                }
+            AboutGroupForm AGF = new AboutGroupForm();
+            AGF.group_id_text = group_id_text;
+                AGF.Show();
         }
 
+        //--------------------------------------Контекст Меню "Удалить Специальность"-------------------------------------------------
         private void DGVSpec_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -481,17 +470,27 @@ namespace StudentSystem
             }
         }
 
+        //--------------------------------------Контекст Меню "Удалить Группу"--------------------------------------------------------
         private void DGVGroups_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                CMSDelGroup.Show(MousePosition, ToolStripDropDownDirection.Right);
+                CMSChangeGroup.Show(MousePosition, ToolStripDropDownDirection.Right);
             }
         }
 
+        //-------------Удаление специальности в DGVSpec и удаление групп со студентами в DGVGroups и их отчисление-------------------
         private void удалитьСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DGVGroups_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                group_id_text = DGVGroups.Rows[e.RowIndex].Cells["group_id"].Value.ToString();
+            }
         }
     }
 

@@ -55,7 +55,7 @@ namespace StudentSystem
             this.светлаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CBGroup = new MetroFramework.Controls.MetroComboBox();
+            this.CBSelectSearch = new MetroFramework.Controls.MetroComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.настройкиПодключенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обАвторахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +74,8 @@ namespace StudentSystem
             this.DGVSpec = new System.Windows.Forms.DataGridView();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.DGVGroups = new System.Windows.Forms.DataGridView();
-            this.CMSDelGroup = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.удалитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMSChangeGroup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.изменитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CMSDelSpec = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьСпециальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudentList)).BeginInit();
@@ -93,7 +93,7 @@ namespace StudentSystem
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpec)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).BeginInit();
-            this.CMSDelGroup.SuspendLayout();
+            this.CMSChangeGroup.SuspendLayout();
             this.CMSDelSpec.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,25 +257,25 @@ namespace StudentSystem
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.CBGroup);
+            this.flowLayoutPanel2.Controls.Add(this.CBSelectSearch);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(273, 104);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(149, 52);
             this.flowLayoutPanel2.TabIndex = 14;
             // 
-            // CBGroup
+            // CBSelectSearch
             // 
-            this.CBGroup.FormattingEnabled = true;
-            this.CBGroup.ItemHeight = 23;
-            this.CBGroup.Items.AddRange(new object[] {
+            this.CBSelectSearch.FormattingEnabled = true;
+            this.CBSelectSearch.ItemHeight = 23;
+            this.CBSelectSearch.Items.AddRange(new object[] {
             "Группам",
             "ФИО"});
-            this.CBGroup.Location = new System.Drawing.Point(0, 23);
-            this.CBGroup.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.CBGroup.Name = "CBGroup";
-            this.CBGroup.Size = new System.Drawing.Size(121, 29);
-            this.CBGroup.TabIndex = 16;
-            this.CBGroup.SelectedIndexChanged += new System.EventHandler(this.CBGroup_SelectedIndexChanged);
+            this.CBSelectSearch.Location = new System.Drawing.Point(0, 23);
+            this.CBSelectSearch.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.CBSelectSearch.Name = "CBSelectSearch";
+            this.CBSelectSearch.Size = new System.Drawing.Size(121, 29);
+            this.CBSelectSearch.TabIndex = 16;
+            this.CBSelectSearch.SelectedIndexChanged += new System.EventHandler(this.CBSelectSearch_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -565,28 +565,29 @@ namespace StudentSystem
             this.DGVGroups.Size = new System.Drawing.Size(193, 247);
             this.DGVGroups.TabIndex = 48;
             this.DGVGroups.TabStop = false;
+            this.DGVGroups.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGroups_CellClick);
             this.DGVGroups.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVGroups_CellMouseClick);
             // 
-            // CMSDelGroup
+            // CMSChangeGroup
             // 
-            this.CMSDelGroup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.удалитьГруппуToolStripMenuItem});
-            this.CMSDelGroup.Name = "contextMenuStrip3";
-            this.CMSDelGroup.Size = new System.Drawing.Size(161, 26);
+            this.CMSChangeGroup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.изменитьГруппуToolStripMenuItem});
+            this.CMSChangeGroup.Name = "contextMenuStrip3";
+            this.CMSChangeGroup.Size = new System.Drawing.Size(171, 26);
             // 
-            // удалитьГруппуToolStripMenuItem
+            // изменитьГруппуToolStripMenuItem
             // 
-            this.удалитьГруппуToolStripMenuItem.Name = "удалитьГруппуToolStripMenuItem";
-            this.удалитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.удалитьГруппуToolStripMenuItem.Text = "Удалить Группу";
-            this.удалитьГруппуToolStripMenuItem.Click += new System.EventHandler(this.удалитьГруппуToolStripMenuItem_Click);
+            this.изменитьГруппуToolStripMenuItem.Name = "изменитьГруппуToolStripMenuItem";
+            this.изменитьГруппуToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.изменитьГруппуToolStripMenuItem.Text = "Изменить Группу";
+            this.изменитьГруппуToolStripMenuItem.Click += new System.EventHandler(this.изменитьГруппуToolStripMenuItem_Click);
             // 
             // CMSDelSpec
             // 
             this.CMSDelSpec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.удалитьСпециальностьToolStripMenuItem});
             this.CMSDelSpec.Name = "CMSDelSpec";
-            this.CMSDelSpec.Size = new System.Drawing.Size(207, 48);
+            this.CMSDelSpec.Size = new System.Drawing.Size(207, 26);
             // 
             // удалитьСпециальностьToolStripMenuItem
             // 
@@ -636,7 +637,7 @@ namespace StudentSystem
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpec)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).EndInit();
-            this.CMSDelGroup.ResumeLayout(false);
+            this.CMSChangeGroup.ResumeLayout(false);
             this.CMSDelSpec.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -660,7 +661,7 @@ namespace StudentSystem
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem настройкиПодключенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обАвторахToolStripMenuItem;
-        private MetroFramework.Controls.MetroComboBox CBGroup;
+        private MetroFramework.Controls.MetroComboBox CBSelectSearch;
         private MetroFramework.Controls.MetroTabControl TCST;
         private MetroFramework.Controls.MetroTabPage TPAllST;
         private MetroFramework.Controls.MetroTabPage TPEXST;
@@ -677,8 +678,8 @@ namespace StudentSystem
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         public System.Windows.Forms.DataGridView DGVSpec;
         public System.Windows.Forms.DataGridView DGVGroups;
-        private System.Windows.Forms.ContextMenuStrip CMSDelGroup;
-        private System.Windows.Forms.ToolStripMenuItem удалитьГруппуToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CMSChangeGroup;
+        private System.Windows.Forms.ToolStripMenuItem изменитьГруппуToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip CMSDelSpec;
         private System.Windows.Forms.ToolStripMenuItem удалитьСпециальностьToolStripMenuItem;
     }

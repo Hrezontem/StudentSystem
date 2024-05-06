@@ -317,6 +317,7 @@
             this.Name = "NewGroupCreate";
             this.Resizable = false;
             this.Text = "Добавление группы";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewGroupCreate_FormClosing);
             this.Load += new System.EventHandler(this.NewGroupCreate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVSpecNameGR)).EndInit();
             this.groupBox4.ResumeLayout(false);

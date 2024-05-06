@@ -137,6 +137,7 @@
             this.Name = "NewSpec";
             this.Resizable = false;
             this.Text = "Новая специальность";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewSpec_FormClosing);
             this.Load += new System.EventHandler(this.NewSpec_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

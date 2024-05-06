@@ -327,6 +327,7 @@ namespace StudentSystem
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Добавление студента";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.STNewStForm_FormClosing);
             this.Load += new System.EventHandler(this.STNewStForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);

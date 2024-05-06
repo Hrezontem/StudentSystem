@@ -179,5 +179,12 @@ namespace StudentSystem
                 group_id_text = DGVGroups.Rows[e.RowIndex].Cells["group_id"].Value.ToString();
             }
         }
+
+        private void STDescription_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainForm MF = new MainForm();
+            this.Hide();
+            MF.Show();
+        }
     }
 }
