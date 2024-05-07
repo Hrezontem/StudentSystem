@@ -52,12 +52,12 @@ namespace StudentSystem
         }
 
         //*****************************************Выборка. Актульные студенты/Отчисленные*********************************************
-        private void Select(string sql_st)
+        private void Select()
         {
             try
             {
                 sqlConnection.Open();
-                sql = sql_st; //@"select * from students_select(1)";
+                sql = @"select * from students_select(1)";
                 cmd = new NpgsqlCommand(sql, sqlConnection);
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
@@ -84,17 +84,49 @@ namespace StudentSystem
                 MessageBox.Show("ERROR: " + ex.Message);
             }
         }
-        
+
+        private void SelectEx()
+        {
+            try
+            {
+                sqlConnection.Open();
+                sql = @"select * from students_select(2)";
+                cmd = new NpgsqlCommand(sql, sqlConnection);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                sqlConnection.Close();
+                DGVExpelledtList.DataSource = null;
+                DGVExpelledtList.DataSource = dt;
+                DGVExpelledtList.Columns["students_id"].Visible = false;
+                DGVExpelledtList.Columns["students_name"].HeaderText = "ФИО";
+                DGVExpelledtList.Columns["group_spec_name"].Visible = false;
+                DGVExpelledtList.Columns["group_code"].Visible = false;
+                DGVExpelledtList.Columns["group_full_name"].HeaderText = "Группа";
+                DGVExpelledtList.Columns["group_name"].Visible = false;
+                DGVExpelledtList.Columns["group_name_id"].Visible = false;
+                DGVExpelledtList.Columns["group_num"].Visible = false;
+                DGVExpelledtList.Columns["group_id"].Visible = false;
+                DGVExpelledtList.Columns["student_card"].HeaderText = "Студенческий";
+                DGVExpelledtList.Columns["group_years"].HeaderText = "Годы обучения";
+                DGVExpelledtList.Columns["students_dateborn"].Visible = false;
+                DGVExpelledtList.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
 
         //---------------------------------------------Выборка Групп------------------------------------------------------
         private void SelectGroups()
         {
+            var dt = new DataTable();
             try
             {
                 sqlConnection.Open();
                 sql = @"select * from group_select()";
                 cmd = new NpgsqlCommand(sql, sqlConnection);
-                dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
                 sqlConnection.Close();
                 DGVGroups.DataSource = null;
@@ -116,12 +148,12 @@ namespace StudentSystem
         //------------------------------------------Выборка Специальностей-----------------------------------------------
         private void SelectSpec()
         {
+            var dt = new DataTable();
             try
             {
                 sqlConnection.Open();
                 sql = @"select * from group_name";
                 cmd = new NpgsqlCommand(sql, sqlConnection);
-                dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
                 sqlConnection.Close();
                 DGVSpec.DataSource = null;
@@ -145,7 +177,7 @@ namespace StudentSystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
-            Select(@"select * from students_select(1)");
+            Select();
             SelectSpec();
             SelectGroups();
             CBSelectSearch.SelectedIndex = 0;
@@ -166,7 +198,7 @@ namespace StudentSystem
 
 
             DataView dv = dt.DefaultView;
-            dv.RowFilter = $"{ sort_textbox} LIKE '" + SearchST.Text + "%'";
+            dv.RowFilter = $"{sort_textbox} LIKE '" + SearchST.Text + "%'";
             DGVStudentList.DataSource = dv;
         }
 
@@ -356,7 +388,7 @@ namespace StudentSystem
                         cmd.ExecuteNonQuery();
                         sqlConnection.Close();
                         MessageBox.Show("Отменено");
-                        Select(@"select * from students_select(2)");
+                        SelectEx();
                     }
                     catch (Exception ex)
                     {
@@ -388,7 +420,7 @@ namespace StudentSystem
                         cmd.ExecuteNonQuery();
                         sqlConnection.Close();
                         MessageBox.Show("Удалено успешно");
-                        Select(@"select * from students_select(2)");
+                        SelectEx();
                     }
                     catch (Exception ex)
                     {
@@ -403,10 +435,10 @@ namespace StudentSystem
         {
             if (TCST.SelectedTab == TPAllST)
             {
-                Select(@"select * from students_select(1)");
+                Select();
             } else
             {
-                Select(@"select * from students_select(2)");
+                SelectEx();
             }
         }
 
@@ -443,13 +475,13 @@ namespace StudentSystem
         //------------------------------------------Выборка групп в DGVGroups и специальностей в DGVSpec-------------------------------
         private void TCSpecGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TCSpecGroups.SelectedTab == TPAllST)
+            if (TCSpecGroups.SelectedTab == TCSpecGr)
             {
-                SelectGroups();
+                SelectSpec();
             }
             else
             {
-                SelectSpec();
+                SelectGroups();
             }
         }
 
@@ -458,16 +490,14 @@ namespace StudentSystem
         {
             AboutGroupForm AGF = new AboutGroupForm();
             AGF.group_id_text = group_id_text;
+            AGF.Group_Text.Text = group_full_name_string;
                 AGF.Show();
         }
 
         //--------------------------------------Контекст Меню "Удалить Специальность"-------------------------------------------------
         private void DGVSpec_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-            {
-                CMSDelSpec.Show(MousePosition, ToolStripDropDownDirection.Right);
-            }
+
         }
 
         //--------------------------------------Контекст Меню "Удалить Группу"--------------------------------------------------------
@@ -480,17 +510,49 @@ namespace StudentSystem
         }
 
         //-------------Удаление специальности в DGVSpec и удаление групп со студентами в DGVGroups и их отчисление-------------------
-        private void удалитьСпециальностьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void DGVGroups_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 group_id_text = DGVGroups.Rows[e.RowIndex].Cells["group_id"].Value.ToString();
+                group_full_name_string = DGVGroups.Rows[e.RowIndex].Cells["group_full_name"].Value.ToString();
+
             }
+        }
+
+        private void DGVGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void выпуститьГруппуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var drez = MessageBox.Show(
+   "Вы уверены???",
+   "ВНИМАНИЕ!!!",
+   MessageBoxButtons.YesNo,
+   MessageBoxIcon.Warning,
+   MessageBoxDefaultButton.Button1
+   );
+            if (drez == DialogResult.Yes)
+                    try
+                    {
+                        sqlConnection.Open();
+                        sql = $"update students set \"students_isStudies\" = false where group_id = {group_id_text}";
+                        //sql = $"select * from students_expulsion({group_id_text})";
+                        cmd = new NpgsqlCommand(sql, sqlConnection);
+                        cmd.ExecuteNonQuery();
+                        sqlConnection.Close();
+                        MessageBox.Show("Выпущены успешно");
+                        SelectEx();
+                    }
+                    catch (Exception ex)
+                    {
+                        sqlConnection.Close();
+                        MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
+                    }
         }
     }
 

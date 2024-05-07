@@ -39,12 +39,34 @@ namespace StudentSystem
 
         private void AboutGroupForm_Load(object sender, EventArgs e)
         {
-
+            sqlConnection = new NpgsqlConnection(connstring);
         }
 
         private void AboutGroupForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
+        }
+
+        private void BTNSTInfo_Click(object sender, EventArgs e)
+        {
+                    try
+                    {
+                        sqlConnection.Open();
+                        sql = $"select * from group_update('{MTBDateStudy.Text.ToString()}', {group_id_text})";
+                        cmd = new NpgsqlCommand(sql, sqlConnection);
+                        cmd.ExecuteNonQuery();
+                        sqlConnection.Close();
+                        MessageBox.Show("Изменено");
+                        Select();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        sqlConnection.Close();
+                        MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
+                    }
+                
         }
     }
 }
