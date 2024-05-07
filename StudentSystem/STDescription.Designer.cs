@@ -137,7 +137,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label5.Location = new System.Drawing.Point(35, 174);
+            this.label5.Location = new System.Drawing.Point(35, 129);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(246, 19);
@@ -149,7 +149,7 @@ namespace StudentSystem
             this.STBiletTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.STBiletTextBox.Location = new System.Drawing.Point(38, 196);
+            this.STBiletTextBox.Location = new System.Drawing.Point(38, 151);
             this.STBiletTextBox.Name = "STBiletTextBox";
             this.STBiletTextBox.Size = new System.Drawing.Size(243, 20);
             this.STBiletTextBox.TabIndex = 36;
@@ -292,7 +292,7 @@ namespace StudentSystem
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVGroups.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGVGroups.GridColor = System.Drawing.Color.White;
-            this.DGVGroups.Location = new System.Drawing.Point(38, 277);
+            this.DGVGroups.Location = new System.Drawing.Point(38, 222);
             this.DGVGroups.MultiSelect = false;
             this.DGVGroups.Name = "DGVGroups";
             this.DGVGroups.ReadOnly = true;
@@ -310,7 +310,7 @@ namespace StudentSystem
             this.SearchGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchGroup.Location = new System.Drawing.Point(38, 151);
+            this.SearchGroup.Location = new System.Drawing.Point(38, 196);
             this.SearchGroup.Name = "SearchGroup";
             this.SearchGroup.Size = new System.Drawing.Size(243, 20);
             this.SearchGroup.TabIndex = 53;
@@ -322,7 +322,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label1.Location = new System.Drawing.Point(35, 129);
+            this.label1.Location = new System.Drawing.Point(35, 174);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 19);
@@ -362,12 +362,12 @@ namespace StudentSystem
             this.flowLayoutPanel1.Controls.Add(this.STFIOTextBox);
             this.flowLayoutPanel1.Controls.Add(this.groupBox3);
             this.flowLayoutPanel1.Controls.Add(this.DTPDateBirth);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.STBiletTextBox);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.DGVGroups);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
             this.flowLayoutPanel1.Controls.Add(this.label3);
@@ -410,7 +410,7 @@ namespace StudentSystem
             // 
             this.groupBox4.Controls.Add(this.Group);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(38, 222);
+            this.groupBox4.Location = new System.Drawing.Point(38, 323);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(243, 49);
             this.groupBox4.TabIndex = 62;

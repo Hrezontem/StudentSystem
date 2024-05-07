@@ -116,7 +116,7 @@ namespace StudentSystem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(50, 155);
+            this.label5.Location = new System.Drawing.Point(50, 110);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(197, 19);
@@ -125,7 +125,7 @@ namespace StudentSystem
             // 
             // STBiletTextBox
             // 
-            this.STBiletTextBox.Location = new System.Drawing.Point(53, 177);
+            this.STBiletTextBox.Location = new System.Drawing.Point(53, 132);
             this.STBiletTextBox.Name = "STBiletTextBox";
             this.STBiletTextBox.Size = new System.Drawing.Size(201, 20);
             this.STBiletTextBox.TabIndex = 15;
@@ -251,7 +251,7 @@ namespace StudentSystem
             // 
             // SearchGroup
             // 
-            this.SearchGroup.Location = new System.Drawing.Point(53, 132);
+            this.SearchGroup.Location = new System.Drawing.Point(53, 177);
             this.SearchGroup.Name = "SearchGroup";
             this.SearchGroup.Size = new System.Drawing.Size(201, 20);
             this.SearchGroup.TabIndex = 50;
@@ -261,7 +261,7 @@ namespace StudentSystem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(50, 110);
+            this.label1.Location = new System.Drawing.Point(50, 155);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 19);
@@ -274,10 +274,10 @@ namespace StudentSystem
             this.flowLayoutPanel1.Controls.Add(this.STFIOTextBox);
             this.flowLayoutPanel1.Controls.Add(this.label7);
             this.flowLayoutPanel1.Controls.Add(this.DTPDateBirth);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.STBiletTextBox);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.DGVGroups);
             this.flowLayoutPanel1.Controls.Add(this.label4);
