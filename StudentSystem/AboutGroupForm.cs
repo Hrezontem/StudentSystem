@@ -31,6 +31,7 @@ namespace StudentSystem
         private string sort_textbox;
         private int rowIndex = -1;
         public string group_id_text;
+        private string group_id_choice;
 
         public AboutGroupForm()
         {
@@ -40,6 +41,7 @@ namespace StudentSystem
         private void AboutGroupForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
+            SelectGroups();
         }
 
         private void AboutGroupForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,26 +49,96 @@ namespace StudentSystem
             this.Hide();
         }
 
+        private void SelectGroups()
+        {
+            var dt = new DataTable();
+            try
+            {
+                sqlConnection.Open();
+                sql = @"select * from group_select()";
+                cmd = new NpgsqlCommand(sql, sqlConnection);
+                dt.Load(cmd.ExecuteReader());
+                sqlConnection.Close();
+                DGVGroups.DataSource = null;
+                DGVGroups.DataSource = dt;
+                DGVGroups.Columns["group_id"].Visible = false;
+                DGVGroups.Columns["group_full_name"].HeaderText = "Группа";
+                DGVGroups.Columns["group_spec_name"].Visible = false;
+                DGVGroups.Columns["group_code"].Visible = false;
+                DGVGroups.ClearSelection();
+
+            }
+            catch (Exception ex)
+            {
+                sqlConnection.Close();
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
         private void BTNSTInfo_Click(object sender, EventArgs e)
         {
-                    try
-                    {
-                        sqlConnection.Open();
-                        sql = $"select * from group_update('{MTBDateStudy.Text.ToString()}', {group_id_text})";
-                        cmd = new NpgsqlCommand(sql, sqlConnection);
-                        cmd.ExecuteNonQuery();
-                        sqlConnection.Close();
-                        MessageBox.Show("Изменено");
-                        Select();
+            if (DGVFlowLayout.Visible == true)
+            {
+                try
+                {
+                    sqlConnection.Open();
+                    sql = $"select * from group_update('{MTBDateStudy.Text.ToString()}', {group_id_text})";
+                    cmd = new NpgsqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    sqlConnection.Close();
+                    sqlConnection.Open();
+                    sql = $"select * from students_group_update('{group_id_choice}', {group_id_text})";
+                    cmd = new NpgsqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    sqlConnection.Close();
+                    MessageBox.Show("Изменено");
+                    Select();
 
 
-                    }
-                    catch (Exception ex)
-                    {
-                        sqlConnection.Close();
-                        MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    sqlConnection.Close();
+                    MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+                    sqlConnection.Open();
+                    sql = $"select * from group_update('{MTBDateStudy.Text.ToString()}', {group_id_text})";
+                    cmd = new NpgsqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    sqlConnection.Close();
+                    MessageBox.Show("Изменено");
+                    Select();
+
+
+                }
+                catch (Exception ex)
+                {
+                    sqlConnection.Close();
+                    MessageBox.Show("Ошибка доступа. Ошибка: " + ex.Message);
+                }
+            }
+   
                 
+        }
+
+        private void BTNChange_Click(object sender, EventArgs e)
+        {
+            grouplabel.Visible = !grouplabel.Visible;
+            DGVFlowLayout.Visible = !DGVFlowLayout.Visible;
+        }
+
+        private void DGVGroups_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                group_id_choice = DGVGroups.Rows[e.RowIndex].Cells["group_id"].Value.ToString();
+
+            }
         }
     }
 }

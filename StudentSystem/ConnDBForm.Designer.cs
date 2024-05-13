@@ -193,12 +193,16 @@
             // 
             // FLPAuth
             // 
+            this.FLPAuth.AutoSize = true;
+            this.FLPAuth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FLPAuth.Controls.Add(this.FLPBase);
             this.FLPAuth.Controls.Add(this.BTNchange);
             this.FLPAuth.Controls.Add(this.flowLayoutPanel1);
-            this.FLPAuth.Location = new System.Drawing.Point(21, 54);
+            this.FLPAuth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FLPAuth.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FLPAuth.Location = new System.Drawing.Point(27, 88);
             this.FLPAuth.Name = "FLPAuth";
-            this.FLPAuth.Size = new System.Drawing.Size(529, 459);
+            this.FLPAuth.Size = new System.Drawing.Size(532, 450);
             this.FLPAuth.TabIndex = 22;
             // 
             // BTNchange
@@ -225,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(580, 702);
+            this.ClientSize = new System.Drawing.Size(586, 567);
             this.Controls.Add(this.FLPAuth);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -243,6 +247,7 @@
             this.FLPAuth.ResumeLayout(false);
             this.FLPAuth.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

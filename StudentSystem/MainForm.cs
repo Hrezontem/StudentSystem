@@ -108,6 +108,7 @@ namespace StudentSystem
                 DGVExpelledtList.Columns["group_id"].Visible = false;
                 DGVExpelledtList.Columns["student_card"].HeaderText = "Студенческий";
                 DGVExpelledtList.Columns["group_years"].HeaderText = "Годы обучения";
+                DGVExpelledtList.Columns["group_years"].Visible = false;
                 DGVExpelledtList.Columns["students_dateborn"].Visible = false;
                 DGVExpelledtList.ClearSelection();
             }
@@ -179,11 +180,17 @@ namespace StudentSystem
             sqlConnection = new NpgsqlConnection(connstring);
             if(Properties.Settings.Default.login_base == "client")
             {
+                UserIndicator.Text = "Клиент";
                 BTNInsertST.Visible = false;
                 jToolStripMenuItem.Visible = false;
                 contextMenuStrip1.Enabled = false;
                 contextMenuStrip2.Enabled = false;
                 CMSChangeGroup.Enabled = false;
+            } 
+            else
+            {
+                UserIndicator.Text = "Админ";
+
             }
             Select();
             SelectSpec();
