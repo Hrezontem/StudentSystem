@@ -177,6 +177,14 @@ namespace StudentSystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
+            if(Properties.Settings.Default.login_base == "client")
+            {
+                BTNInsertST.Visible = false;
+                jToolStripMenuItem.Visible = false;
+                contextMenuStrip1.Enabled = false;
+                contextMenuStrip2.Enabled = false;
+                CMSChangeGroup.Enabled = false;
+            }
             Select();
             SelectSpec();
             SelectGroups();
@@ -491,7 +499,7 @@ namespace StudentSystem
             AboutGroupForm AGF = new AboutGroupForm();
             AGF.group_id_text = group_id_text;
             AGF.Group_Text.Text = group_full_name_string;
-                AGF.Show();
+            AGF.Show();
         }
 
         //--------------------------------------Контекст Меню "Удалить Специальность"-------------------------------------------------

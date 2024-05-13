@@ -37,6 +37,8 @@ namespace StudentSystem
 
         private void STDescription_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(Properties.Settings.Default.login_base);
+
             STFIOTextBox.Enabled = false;
             STBiletTextBox.Enabled = false;
             DTPDateBirth.Enabled = false;
@@ -53,7 +55,10 @@ namespace StudentSystem
             sqlConnection = new NpgsqlConnection(connstring);
             SelectGroup();
             DGVGroups.Visible = false;
-
+            if (Properties.Settings.Default.login_base == "client")
+            {
+                BTNActiovateIns.Visible = false;
+            }
         }
 
         private void STSave_Click(object sender, EventArgs e)
