@@ -46,5 +46,10 @@ namespace StudentSystem
             LoginTextBox.Text = var.login_base;
             PasswordTextBox.Text = var.password_base;
         }
+
+        private void BTNchange_Click(object sender, EventArgs e)
+        {
+            FLPBase.Enabled = !FLPBase.Enabled;
+        }
     }
 }

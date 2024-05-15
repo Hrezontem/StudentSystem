@@ -133,8 +133,11 @@
             this.Controls.Add(this.FullSpecNameTB);
             this.Controls.Add(this.CodSpecTB);
             this.Controls.Add(this.SpecNameTB);
+            this.MaximizeBox = false;
             this.Name = "NewSpec";
-            this.Text = "Новая Специальность";
+            this.Resizable = false;
+            this.Text = "Новая специальность";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewSpec_FormClosing);
             this.Load += new System.EventHandler(this.NewSpec_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

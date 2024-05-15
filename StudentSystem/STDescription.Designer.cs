@@ -29,7 +29,7 @@ namespace StudentSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.STFIOTextBox = new System.Windows.Forms.TextBox();
             this.LALFIO = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -137,7 +137,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label5.Location = new System.Drawing.Point(35, 174);
+            this.label5.Location = new System.Drawing.Point(35, 129);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(246, 19);
@@ -149,7 +149,7 @@ namespace StudentSystem
             this.STBiletTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.STBiletTextBox.Location = new System.Drawing.Point(38, 196);
+            this.STBiletTextBox.Location = new System.Drawing.Point(38, 151);
             this.STBiletTextBox.Name = "STBiletTextBox";
             this.STBiletTextBox.Size = new System.Drawing.Size(243, 20);
             this.STBiletTextBox.TabIndex = 36;
@@ -160,7 +160,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DTPDateBirth.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DTPDateBirth.CustomFormat = "dd--MM-yyyy";
+            this.DTPDateBirth.CustomFormat = "yyyy-MM-dd";
             this.DTPDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPDateBirth.Location = new System.Drawing.Point(38, 106);
             this.DTPDateBirth.Name = "DTPDateBirth";
@@ -283,16 +283,16 @@ namespace StudentSystem
             this.DGVGroups.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGVGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGroups.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVGroups.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVGroups.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGVGroups.GridColor = System.Drawing.Color.White;
-            this.DGVGroups.Location = new System.Drawing.Point(38, 277);
+            this.DGVGroups.Location = new System.Drawing.Point(38, 222);
             this.DGVGroups.MultiSelect = false;
             this.DGVGroups.Name = "DGVGroups";
             this.DGVGroups.ReadOnly = true;
@@ -310,7 +310,7 @@ namespace StudentSystem
             this.SearchGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchGroup.Location = new System.Drawing.Point(38, 151);
+            this.SearchGroup.Location = new System.Drawing.Point(38, 196);
             this.SearchGroup.Name = "SearchGroup";
             this.SearchGroup.Size = new System.Drawing.Size(243, 20);
             this.SearchGroup.TabIndex = 53;
@@ -322,7 +322,7 @@ namespace StudentSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
-            this.label1.Location = new System.Drawing.Point(35, 129);
+            this.label1.Location = new System.Drawing.Point(35, 174);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 19);
@@ -362,12 +362,12 @@ namespace StudentSystem
             this.flowLayoutPanel1.Controls.Add(this.STFIOTextBox);
             this.flowLayoutPanel1.Controls.Add(this.groupBox3);
             this.flowLayoutPanel1.Controls.Add(this.DTPDateBirth);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.STBiletTextBox);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.SearchGroup);
             this.flowLayoutPanel1.Controls.Add(this.DGVGroups);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
             this.flowLayoutPanel1.Controls.Add(this.label3);
@@ -410,7 +410,7 @@ namespace StudentSystem
             // 
             this.groupBox4.Controls.Add(this.Group);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(38, 222);
+            this.groupBox4.Location = new System.Drawing.Point(38, 323);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(243, 49);
             this.groupBox4.TabIndex = 62;
@@ -453,6 +453,7 @@ namespace StudentSystem
             this.Resizable = false;
             this.Text = "Информация о студенте";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.STDescription_FormClosing);
             this.Load += new System.EventHandler(this.STDescription_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVGroups)).EndInit();
             this.groupBox1.ResumeLayout(false);
