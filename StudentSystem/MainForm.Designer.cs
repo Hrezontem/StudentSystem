@@ -58,10 +58,11 @@ namespace StudentSystem
             this.CBSelectSearch = new MetroFramework.Controls.MetroComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.UserIndicator = new System.Windows.Forms.ToolStripMenuItem();
-            this.обАвторахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиПодключенияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.jToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСпециальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обАвторахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TCST = new MetroFramework.Controls.MetroTabControl();
             this.TPAllST = new MetroFramework.Controls.MetroTabPage();
             this.TPEXST = new MetroFramework.Controls.MetroTabPage();
@@ -78,7 +79,6 @@ namespace StudentSystem
             this.изменитьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выпуститьГруппуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.настройкиПодключенияToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudentList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -145,7 +145,7 @@ namespace StudentSystem
             this.BTNInsertST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNInsertST.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
             this.BTNInsertST.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTNInsertST.Location = new System.Drawing.Point(3, 41);
+            this.BTNInsertST.Location = new System.Drawing.Point(3, 5);
             this.BTNInsertST.Name = "BTNInsertST";
             this.BTNInsertST.Size = new System.Drawing.Size(207, 32);
             this.BTNInsertST.TabIndex = 3;
@@ -162,7 +162,7 @@ namespace StudentSystem
             this.BTNSTInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNSTInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F);
             this.BTNSTInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTNSTInfo.Location = new System.Drawing.Point(3, 3);
+            this.BTNSTInfo.Location = new System.Drawing.Point(3, 43);
             this.BTNSTInfo.Name = "BTNSTInfo";
             this.BTNSTInfo.Size = new System.Drawing.Size(207, 32);
             this.BTNSTInfo.TabIndex = 4;
@@ -290,7 +290,7 @@ namespace StudentSystem
             this.menuStrip1.Location = new System.Drawing.Point(19, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(227, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(347, 27);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -303,12 +303,14 @@ namespace StudentSystem
             this.UserIndicator.Size = new System.Drawing.Size(55, 23);
             this.UserIndicator.Text = "[user]";
             // 
-            // обАвторахToolStripMenuItem
+            // настройкиПодключенияToolStripMenuItem1
             // 
-            this.обАвторахToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.обАвторахToolStripMenuItem.Name = "обАвторахToolStripMenuItem";
-            this.обАвторахToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
-            this.обАвторахToolStripMenuItem.Text = "Об авторах";
+            this.настройкиПодключенияToolStripMenuItem1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.настройкиПодключенияToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.настройкиПодключенияToolStripMenuItem1.Name = "настройкиПодключенияToolStripMenuItem1";
+            this.настройкиПодключенияToolStripMenuItem1.Size = new System.Drawing.Size(240, 24);
+            this.настройкиПодключенияToolStripMenuItem1.Text = "Настройки подключения";
+            this.настройкиПодключенияToolStripMenuItem1.Click += new System.EventHandler(this.настройкиПодключенияToolStripMenuItem_Click);
             // 
             // jToolStripMenuItem
             // 
@@ -338,6 +340,14 @@ namespace StudentSystem
             this.добавитьСпециальностьToolStripMenuItem.Text = "Добавить Специальность";
             this.добавитьСпециальностьToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпециальностьToolStripMenuItem_Click);
             // 
+            // обАвторахToolStripMenuItem
+            // 
+            this.обАвторахToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.обАвторахToolStripMenuItem.Name = "обАвторахToolStripMenuItem";
+            this.обАвторахToolStripMenuItem.Size = new System.Drawing.Size(95, 23);
+            this.обАвторахToolStripMenuItem.Text = "Об авторах";
+            this.обАвторахToolStripMenuItem.Visible = false;
+            // 
             // TCST
             // 
             this.TCST.Controls.Add(this.TPAllST);
@@ -353,9 +363,9 @@ namespace StudentSystem
             // 
             this.TPAllST.Controls.Add(this.DGVStudentList);
             this.TPAllST.HorizontalScrollbarBarColor = true;
-            this.TPAllST.Location = new System.Drawing.Point(4, 35);
+            this.TPAllST.Location = new System.Drawing.Point(4, 39);
             this.TPAllST.Name = "TPAllST";
-            this.TPAllST.Size = new System.Drawing.Size(690, 411);
+            this.TPAllST.Size = new System.Drawing.Size(690, 407);
             this.TPAllST.TabIndex = 0;
             this.TPAllST.Text = "Все студенты";
             this.TPAllST.VerticalScrollbarBarColor = true;
@@ -364,9 +374,9 @@ namespace StudentSystem
             // 
             this.TPEXST.Controls.Add(this.DGVExpelledtList);
             this.TPEXST.HorizontalScrollbarBarColor = true;
-            this.TPEXST.Location = new System.Drawing.Point(4, 35);
+            this.TPEXST.Location = new System.Drawing.Point(4, 39);
             this.TPEXST.Name = "TPEXST";
-            this.TPEXST.Size = new System.Drawing.Size(690, 411);
+            this.TPEXST.Size = new System.Drawing.Size(690, 407);
             this.TPEXST.TabIndex = 1;
             this.TPEXST.Text = "Отчисленные";
             this.TPEXST.VerticalScrollbarBarColor = true;
@@ -455,9 +465,9 @@ namespace StudentSystem
             // 
             this.TCSpecGr.Controls.Add(this.DGVSpec);
             this.TCSpecGr.HorizontalScrollbarBarColor = true;
-            this.TCSpecGr.Location = new System.Drawing.Point(4, 35);
+            this.TCSpecGr.Location = new System.Drawing.Point(4, 39);
             this.TCSpecGr.Name = "TCSpecGr";
-            this.TCSpecGr.Size = new System.Drawing.Size(199, 250);
+            this.TCSpecGr.Size = new System.Drawing.Size(199, 246);
             this.TCSpecGr.TabIndex = 0;
             this.TCSpecGr.Text = "Специальности";
             this.TCSpecGr.VerticalScrollbarBarColor = true;
@@ -514,9 +524,9 @@ namespace StudentSystem
             // 
             this.TCGroup.Controls.Add(this.DGVGroups);
             this.TCGroup.HorizontalScrollbarBarColor = true;
-            this.TCGroup.Location = new System.Drawing.Point(4, 35);
+            this.TCGroup.Location = new System.Drawing.Point(4, 39);
             this.TCGroup.Name = "TCGroup";
-            this.TCGroup.Size = new System.Drawing.Size(199, 250);
+            this.TCGroup.Size = new System.Drawing.Size(199, 246);
             this.TCGroup.TabIndex = 1;
             this.TCGroup.Text = "Группы";
             this.TCGroup.VerticalScrollbarBarColor = true;
@@ -597,19 +607,11 @@ namespace StudentSystem
             // 
             this.flowLayoutPanel3.Controls.Add(this.BTNSTInfo);
             this.flowLayoutPanel3.Controls.Add(this.BTNInsertST);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(41, 530);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(222, 78);
             this.flowLayoutPanel3.TabIndex = 19;
-            // 
-            // настройкиПодключенияToolStripMenuItem1
-            // 
-            this.настройкиПодключенияToolStripMenuItem1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.настройкиПодключенияToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.настройкиПодключенияToolStripMenuItem1.Name = "настройкиПодключенияToolStripMenuItem1";
-            this.настройкиПодключенияToolStripMenuItem1.Size = new System.Drawing.Size(240, 24);
-            this.настройкиПодключенияToolStripMenuItem1.Text = "Настройки подключения";
-            this.настройкиПодключенияToolStripMenuItem1.Click += new System.EventHandler(this.настройкиПодключенияToolStripMenuItem_Click);
             // 
             // MainForm
             // 

@@ -55,7 +55,7 @@ namespace StudentSystem
             sqlConnection = new NpgsqlConnection(connstring);
             SelectGroup();
             DGVGroups.Visible = false;
-            if (Properties.Settings.Default.login_base == "client")
+            if (Properties.Settings.Default.login_base == "client_students")
             {
                 BTNActiovateIns.Visible = false;
             }

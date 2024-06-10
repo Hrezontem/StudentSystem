@@ -178,7 +178,7 @@ namespace StudentSystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             sqlConnection = new NpgsqlConnection(connstring);
-            if(Properties.Settings.Default.login_base == "client")
+            if(Properties.Settings.Default.login_base == "client_students")
             {
                 UserIndicator.Text = "Клиент";
                 BTNInsertST.Visible = false;

@@ -144,6 +144,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(518, 24);
             this.PasswordTextBox.TabIndex = 8;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // BTNauth
             // 
@@ -221,6 +222,7 @@
             this.BTNchange.Size = new System.Drawing.Size(110, 48);
             this.BTNchange.TabIndex = 20;
             this.BTNchange.Text = "Изменить";
+            this.BTNchange.UseVisualStyleBackColor = false;
             this.BTNchange.Click += new System.EventHandler(this.BTNchange_Click);
             // 
             // ConnDBForm
